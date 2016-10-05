@@ -1,0 +1,26 @@
+{
+    "proyServ1App": {
+        "hash" : {
+            "home": {
+                "title": "Hashes",
+                "createLabel": "Criar novo Hash",
+                "createOrEditLabel": "Criar ou editar Hash",
+                "search": "Pesquisar por Hash"
+            },
+            "created": "Um novo Hash é criado com o identificador {{ param }}",
+            "updated": "Um Hash é atualizado com o identificador {{ param }}",
+            "deleted": "Um Hash é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Hash {{ id }}?"
+            },
+            "detail": {
+                "title": "Hash"
+            },
+            "hashName": "Hash Name",
+            "hashType": "Hash Type",
+            "userHash": "User Hash",
+            "articleHash": "Article Hash",
+            "user": "User"
+        }
+    }
+}

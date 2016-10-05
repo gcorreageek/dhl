@@ -1,0 +1,70 @@
+entity UserPlus {
+  info1 String,
+  info2 String,
+  info3 String,
+  info4 String,
+  info5 String,
+  info6 String,
+  info7 String,
+  info8 String,
+  info9 String,
+  info10 String
+}
+entity UserImagen {
+  userImagenName String,
+  userImagenPath String,
+  userImagenPathImage String,
+  userImagenType String
+}
+entity Friend {
+  friendType String
+}
+entity Hash {
+  hashName String,
+  hashType String
+}
+entity UserHash {
+}
+entity Article {
+  articleName String,
+  articleHtml String,
+  articleDateTime ZonedDateTime
+}
+entity ArticleHash {
+}
+entity ArticleReaction {
+  articleReactionType String
+}
+relationship OneToMany {
+  User{userPlus} to UserPlus
+}
+relationship OneToMany {
+  User{userImagen} to UserImagen
+}
+relationship OneToMany {
+  User{friend} to Friend{user1},
+  User{friend} to Friend{user2}
+}
+relationship OneToMany {
+  User{hash} to Hash
+}
+relationship OneToMany {
+  User{userHash} to UserHash,
+  Hash{userHash} to UserHash
+}
+relationship OneToMany {
+  User{article} to Article
+}
+relationship OneToMany {
+  Hash{articleHash} to ArticleHash,
+  Article{articleHash} to ArticleHash
+}
+relationship OneToMany {
+  User{articleReaction} to ArticleReaction,
+  Article{articleReaction} to ArticleReaction
+}
+
+
+
+ 
+

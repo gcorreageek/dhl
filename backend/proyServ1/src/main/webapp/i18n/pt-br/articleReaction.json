@@ -1,0 +1,24 @@
+{
+    "proyServ1App": {
+        "articleReaction" : {
+            "home": {
+                "title": "Article Reactions",
+                "createLabel": "Criar novo Article Reaction",
+                "createOrEditLabel": "Criar ou editar Article Reaction",
+                "search": "Pesquisar por Article Reaction"
+            },
+            "created": "Um novo Article Reaction é criado com o identificador {{ param }}",
+            "updated": "Um Article Reaction é atualizado com o identificador {{ param }}",
+            "deleted": "Um Article Reaction é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Article Reaction {{ id }}?"
+            },
+            "detail": {
+                "title": "Article Reaction"
+            },
+            "articleReactionType": "Article Reaction Type",
+            "article": "Article",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "proyServ1App": {
+        "articleHash" : {
+            "home": {
+                "title": "Article Hashes",
+                "createLabel": "Crear nuevo Article Hash",
+                "createOrEditLabel": "Crear o editar Article Hash",
+                "search": "Search for Article Hash"
+            },
+            "created": "Un nuevo Article Hash ha sido creado con el identificador {{ param }}",
+            "updated": "Un Article Hash ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Article Hash ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Article Hash {{ id }}?"
+            },
+            "detail": {
+                "title": "Article Hash"
+            },
+            "hash": "Hash",
+            "article": "Article"
+        }
+    }
+}

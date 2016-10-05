@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="proyServ1App.userPlus.home.title">User Pluses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="user-plus.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="proyServ1App.userPlus.home.createLabel">
+                        Create new User Plus
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info1">Info 1</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info2">Info 2</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info3">Info 3</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info4">Info 4</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info5">Info 5</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info6">Info 6</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info7">Info 7</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info8">Info 8</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info9">Info 9</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.info10">Info 10</span></th>
+                    <th><span data-translate="proyServ1App.userPlus.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="userPlus in vm.userPluses track by userPlus.id">
+                    <td><a ui-sref="user-plus-detail({id:userPlus.id})">{{userPlus.id}}</a></td>
+                    <td>{{userPlus.info1}}</td>
+                    <td>{{userPlus.info2}}</td>
+                    <td>{{userPlus.info3}}</td>
+                    <td>{{userPlus.info4}}</td>
+                    <td>{{userPlus.info5}}</td>
+                    <td>{{userPlus.info6}}</td>
+                    <td>{{userPlus.info7}}</td>
+                    <td>{{userPlus.info8}}</td>
+                    <td>{{userPlus.info9}}</td>
+                    <td>{{userPlus.info10}}</td>
+                    <td>
+                        {{userPlus.user.id}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="user-plus-detail({id:userPlus.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-plus.edit({id:userPlus.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="user-plus.delete({id:userPlus.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

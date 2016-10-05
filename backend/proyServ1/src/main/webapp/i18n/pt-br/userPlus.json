@@ -1,0 +1,32 @@
+{
+    "proyServ1App": {
+        "userPlus" : {
+            "home": {
+                "title": "User Pluses",
+                "createLabel": "Criar novo User Plus",
+                "createOrEditLabel": "Criar ou editar User Plus",
+                "search": "Pesquisar por User Plus"
+            },
+            "created": "Um novo User Plus é criado com o identificador {{ param }}",
+            "updated": "Um User Plus é atualizado com o identificador {{ param }}",
+            "deleted": "Um User Plus é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir User Plus {{ id }}?"
+            },
+            "detail": {
+                "title": "User Plus"
+            },
+            "info1": "Info 1",
+            "info2": "Info 2",
+            "info3": "Info 3",
+            "info4": "Info 4",
+            "info5": "Info 5",
+            "info6": "Info 6",
+            "info7": "Info 7",
+            "info8": "Info 8",
+            "info9": "Info 9",
+            "info10": "Info 10",
+            "user": "User"
+        }
+    }
+}

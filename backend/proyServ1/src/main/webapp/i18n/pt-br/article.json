@@ -1,0 +1,27 @@
+{
+    "proyServ1App": {
+        "article" : {
+            "home": {
+                "title": "Articles",
+                "createLabel": "Criar novo Article",
+                "createOrEditLabel": "Criar ou editar Article",
+                "search": "Pesquisar por Article"
+            },
+            "created": "Um novo Article é criado com o identificador {{ param }}",
+            "updated": "Um Article é atualizado com o identificador {{ param }}",
+            "deleted": "Um Article é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Article {{ id }}?"
+            },
+            "detail": {
+                "title": "Article"
+            },
+            "articleName": "Article Name",
+            "articleHtml": "Article Html",
+            "articleDateTime": "Article Date Time",
+            "articleHash": "Article Hash",
+            "articleReaction": "Article Reaction",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "proyServ1App": {
+        "userImagen" : {
+            "home": {
+                "title": "User Imagens",
+                "createLabel": "Criar novo User Imagen",
+                "createOrEditLabel": "Criar ou editar User Imagen",
+                "search": "Pesquisar por User Imagen"
+            },
+            "created": "Um novo User Imagen é criado com o identificador {{ param }}",
+            "updated": "Um User Imagen é atualizado com o identificador {{ param }}",
+            "deleted": "Um User Imagen é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir User Imagen {{ id }}?"
+            },
+            "detail": {
+                "title": "User Imagen"
+            },
+            "userImagenName": "User Imagen Name",
+            "userImagenPath": "User Imagen Path",
+            "userImagenPathImage": "User Imagen Path Image",
+            "userImagenType": "User Imagen Type",
+            "user": "User"
+        }
+    }
+}

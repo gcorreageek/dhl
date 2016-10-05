@@ -1,0 +1,92 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myUserPlusLabel" data-translate="proyServ1App.userPlus.home.createOrEditLabel">Create or edit a User Plus</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.userPlus.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.userPlus.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info1" for="field_info1">Info 1</label>
+            <input type="text" class="form-control" name="info1" id="field_info1"
+                    ng-model="vm.userPlus.info1"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info2" for="field_info2">Info 2</label>
+            <input type="text" class="form-control" name="info2" id="field_info2"
+                    ng-model="vm.userPlus.info2"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info3" for="field_info3">Info 3</label>
+            <input type="text" class="form-control" name="info3" id="field_info3"
+                    ng-model="vm.userPlus.info3"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info4" for="field_info4">Info 4</label>
+            <input type="text" class="form-control" name="info4" id="field_info4"
+                    ng-model="vm.userPlus.info4"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info5" for="field_info5">Info 5</label>
+            <input type="text" class="form-control" name="info5" id="field_info5"
+                    ng-model="vm.userPlus.info5"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info6" for="field_info6">Info 6</label>
+            <input type="text" class="form-control" name="info6" id="field_info6"
+                    ng-model="vm.userPlus.info6"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info7" for="field_info7">Info 7</label>
+            <input type="text" class="form-control" name="info7" id="field_info7"
+                    ng-model="vm.userPlus.info7"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info8" for="field_info8">Info 8</label>
+            <input type="text" class="form-control" name="info8" id="field_info8"
+                    ng-model="vm.userPlus.info8"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info9" for="field_info9">Info 9</label>
+            <input type="text" class="form-control" name="info9" id="field_info9"
+                    ng-model="vm.userPlus.info9"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyServ1App.userPlus.info10" for="field_info10">Info 10</label>
+            <input type="text" class="form-control" name="info10" id="field_info10"
+                    ng-model="vm.userPlus.info10"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="proyServ1App.userPlus.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.userPlus.user" ng-options="user as user.id for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
