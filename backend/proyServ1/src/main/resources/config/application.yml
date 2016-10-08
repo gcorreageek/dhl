@@ -61,15 +61,15 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: proyServ1@localhost
+        from: soporte.proy.dhl@gmail.com
     swagger:
         title: proyServ1 API
         description: proyServ1 API documentation
         version: 0.0.1
         termsOfServiceUrl:
-        contactName:
+        contactName: soporte.proy.dhl
         contactUrl:
-        contactEmail:
+        contactEmail: soporte.proy.dhl@gmail.com
         license:
         licenseUrl:
     ribbon:
