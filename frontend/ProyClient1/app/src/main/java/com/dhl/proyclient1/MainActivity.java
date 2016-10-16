@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -71,7 +72,22 @@ public class MainActivity extends AppCompatActivity   {
             supportActionBar.setHomeAsUpIndicator(indicator);
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
-//        LayoutInflater.from(this).inflate(R.layout.nav_header_main, mDrawerLayout);
+
+        View headerview = navigationView.getHeaderView(0);
+        LinearLayout header = (LinearLayout) headerview.findViewById(R.id.linearlayout_header);
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("MainActivity","onClickonClickonClickonClickonClick!!");
+                Context context = MainActivity.this;
+                Intent intent = new Intent(context, ProfileActivity.class);
+                context.startActivity(intent);
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+            }
+        });
+
+
+
 
         navigationView.setNavigationItemSelectedListener(
         new NavigationView.OnNavigationItemSelectedListener() {
