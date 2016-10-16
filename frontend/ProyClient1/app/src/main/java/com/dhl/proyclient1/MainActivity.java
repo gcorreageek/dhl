@@ -71,62 +71,49 @@ public class MainActivity extends AppCompatActivity   {
             supportActionBar.setHomeAsUpIndicator(indicator);
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
+//        LayoutInflater.from(this).inflate(R.layout.nav_header_main, mDrawerLayout);
+
         navigationView.setNavigationItemSelectedListener(
         new NavigationView.OnNavigationItemSelectedListener() {
+
+
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
+                Log.i("MainActivity","siiiiiiiiii!!");
                 item.setChecked(true);
                 int id = item.getItemId();
-                Log.i("MainActivity","ENTRAA!!"+id);
                 if(id==R.id.nav_home){
-                    Log.i("MainActivity","nav_home!!");
-                    Toast.makeText(MainActivity.this,"nav_home!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Home",Toast.LENGTH_SHORT).show();
                 }else if(id==R.id.nav_edit){
                     Log.i("MainActivity","nav_edit!!");
-                    Toast.makeText(MainActivity.this,"nav_edit!!",Toast.LENGTH_SHORT).show();
-
-
                     Context context = MainActivity.this;
                     Intent intent = new Intent(context, EditActivity.class);
-                    Log.i("CardContentFragment","getAdapterPosition!!"+"0");
-
-                    intent.putExtra(DetailActivity.EXTRA_POSITION, 0);
                     context.startActivity(intent);
-
-//                    Intent intent = new Intent(MainActivity.this, PruebaActivity.class);
-//                    startActivity(intent);
-
-//                    Intent.ACTION_VIEW;
-
-//                    Intent intent = new Intent(MainActivity.this,PruebaActivity.class);
-//                    intent.putExtra(DetailActivity.EXTRA_POSITION, null );
-//                    MainActivity.this.startActivity(intent);
-
-
-
-//                    EditFragment editFragment = new EditFragment();
-//                    FragmentManager fragmentManager = getSupportFragmentManager();
-//                    fragmentManager.beginTransaction().replace(R.id.,editFragment).commit();
-//                    Context context = item.getContext();
-//                    Intent intent = new Intent(context, DetailActivity.class);
-//                    intent.putExtra(DetailActivity.EXTRA_POSITION, getAdapterPosition());
-//                    context.startActivity(intent);
-
-//                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-//                    LoginActivity.this.startActivity(intent);
-
                 }else if(id==R.id.nav_close){
                     Log.i("MainActivity","nav_close!!");
-                    Toast.makeText(MainActivity.this,"nav_close!!",Toast.LENGTH_SHORT).show();
+                    Context context = MainActivity.this;
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    context.startActivity(intent);
                 }else if(id==R.id.nav_config){
                     Log.i("MainActivity","nav_config!!");
-                    Toast.makeText(MainActivity.this,"nav_config!!",Toast.LENGTH_SHORT).show();
-                }else if(id==R.id.nav_info){
-                    Log.i("MainActivity","nav_info!!");
-                    Toast.makeText(MainActivity.this,"nav_info!!",Toast.LENGTH_SHORT).show();
+                    Context context = MainActivity.this;
+                    Intent intent = new Intent(context, ConfigActivity.class);
+                    context.startActivity(intent);
+                }else if(id==R.id.nav_about){
+                    Log.i("MainActivity","nav_about!!");
+                    Context context = MainActivity.this;
+                    Intent intent = new Intent(context, AboutActivity.class);
+                    context.startActivity(intent);
+                }else if(id==R.id.nav_help){
+                    Log.i("MainActivity","nav_help!!");
+                    Context context = MainActivity.this;
+                    Intent intent = new Intent(context, HelpActivity.class);
+                    context.startActivity(intent);
                 }else if(id==R.id.nav_web){
                     Log.i("MainActivity","nav_web!!");
-                    Toast.makeText(MainActivity.this,"nav_web!!",Toast.LENGTH_SHORT).show();
+                    Context context = MainActivity.this;
+                    Intent intent = new Intent(context, WebActivity.class);
+                    context.startActivity(intent);
                 }
 
                 mDrawerLayout.closeDrawers();
@@ -203,10 +190,17 @@ public class MainActivity extends AppCompatActivity   {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.i("MainActivity","nav_edit!!");
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
-            return true;
-        } else */if (id == android.R.id.home) {
+
+
+//        if (id == R.id.nav_profile) {
+//            Context context = MainActivity.this;
+//            Intent intent = new Intent(context, ProfileActivity.class);
+//            context.startActivity(intent);
+//            return true;
+//        } else
+        if (id == android.R.id.home) {
             mDrawerLayout.openDrawer(GravityCompat.START);
         }
         return super.onOptionsItemSelected(item);

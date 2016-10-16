@@ -23,19 +23,16 @@ import android.support.v7.widget.Toolbar;
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
-public class EditActivity extends AppCompatActivity {
+public class WebActivity extends AppCompatActivity {
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit);
+        setContentView(R.layout.activity_web);
         Toolbar  toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-//        toolbar.settitle
-
 
 
     }

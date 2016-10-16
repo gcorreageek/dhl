@@ -20,26 +20,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.AppLogin" />
         <activity
             android:name=".DetailActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".EditActivity"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+        <activity android:name=".EditActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".ConfigActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".AboutActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".HelpActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".WebActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".ProfileActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".PruebaActivity"></activity>
+
     </application>
 
 </manifest>
