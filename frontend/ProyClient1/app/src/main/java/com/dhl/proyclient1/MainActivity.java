@@ -2,6 +2,7 @@ package com.dhl.proyclient1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -126,10 +127,10 @@ public class MainActivity extends AppCompatActivity   {
                     Intent intent = new Intent(context, HelpActivity.class);
                     context.startActivity(intent);
                 }else if(id==R.id.nav_web){
-                    Log.i("MainActivity","nav_web!!");
-                    Context context = MainActivity.this;
-                    Intent intent = new Intent(context, WebActivity.class);
-                    context.startActivity(intent);
+                    String url = "https://github.com/gcorreageek/dhl";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
                 }
 
                 mDrawerLayout.closeDrawers();
@@ -143,6 +144,10 @@ public class MainActivity extends AppCompatActivity   {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = MainActivity.this;
+                Intent intent = new Intent(context, NewArticleActivity.class);
+                context.startActivity(intent);
+
                 Snackbar.make(v, "Hello Snackbar!",Snackbar.LENGTH_LONG).show();
             }
         });

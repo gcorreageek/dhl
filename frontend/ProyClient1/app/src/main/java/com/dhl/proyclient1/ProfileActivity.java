@@ -17,13 +17,25 @@
 package com.dhl.proyclient1;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
 public class ProfileActivity extends AppCompatActivity {
+
+    TabLayout tabLayout;
+    ViewPager viewPager;
 
 
     @Override
@@ -36,6 +48,62 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+        viewPager = (ViewPager)findViewById(R.id.viewpager);
+        viewPager.setAdapter(new CustomAdapter(getSupportFragmentManager(), getApplicationContext()));
 
+        tabLayout = (TabLayout)findViewById(R.id.tabsProfile);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_info_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_grain_black_24dp);
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+        });
+    }
+
+    private class CustomAdapter extends FragmentPagerAdapter {
+
+        private String fragments [] = {"", ""};
+
+        public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
+            super(supportFragmentManager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0:
+                    return new InfoFragment();
+                case 1:
+                    return new CardContentFragment();
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return fragments[position];
+        }
     }
 }
+

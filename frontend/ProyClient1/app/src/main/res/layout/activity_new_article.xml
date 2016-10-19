@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_article_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true" >
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <Button
+        android:text="ACEPTAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:id="@+id/btn_aceptararticle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:fillViewport="true">
+
+    </ScrollView>
+
+
+    <Button
+        android:text="ADD HASH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_addhash"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btn_aceptararticle"
+        android:layout_marginEnd="14dp" />
+
+    <Button
+        android:text="Add Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_addimage"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btn_addhash"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:id="@+id/txtquestion"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:lines="20"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        android:textSize="15sp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute         irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia         deserunt mollit anim id est laborum."
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/scrollView2" />
+
+
+</RelativeLayout>
