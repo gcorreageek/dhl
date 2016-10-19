@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span>User Plus</span> {{vm.userPlus.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Weigh</span></dt>
+        <dd>
+            <span>{{vm.userPlus.weigh}}</span>
+        </dd>
+        <dt><span>Height</span></dt>
+        <dd>
+            <span>{{vm.userPlus.height}}</span>
+        </dd>
+        <dt><span>Birthday</span></dt>
+        <dd>
+            <span>{{vm.userPlus.birthday | date:'medium'}}</span>
+        </dd>
+        <dt><span>Sex</span></dt>
+        <dd>
+            <span>{{vm.userPlus.sex}}</span>
+        </dd>
+        <dt><span>Country</span></dt>
+        <dd>
+            <span>{{vm.userPlus.country}}</span>
+        </dd>
+        <dt><span>Languaje</span></dt>
+        <dd>
+            <span>{{vm.userPlus.languaje}}</span>
+        </dd>
+        <dt><span>Disabled Perfil</span></dt>
+        <dd>
+            <span>{{vm.userPlus.disabledPerfil}}</span>
+        </dd>
+        <dt><span>Show Weigh</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showWeigh}}</span>
+        </dd>
+        <dt><span>Show Height</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showHeight}}</span>
+        </dd>
+        <dt><span>Show Birthday</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showBirthday}}</span>
+        </dd>
+        <dt><span>Show Sex</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showSex}}</span>
+        </dd>
+        <dt><span>Show Country</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showCountry}}</span>
+        </dd>
+        <dt><span>Show Languaje</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showLanguaje}}</span>
+        </dd>
+        <dt><span>Notification News</span></dt>
+        <dd>
+            <span>{{vm.userPlus.notificationNews}}</span>
+        </dd>
+        <dt><span>Options</span></dt>
+        <dd>
+            <span>{{vm.userPlus.options}}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.userPlus.user.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="user-plus-detail.edit({id:vm.userPlus.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

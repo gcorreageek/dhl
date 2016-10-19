@@ -101,10 +101,10 @@ public class MainActivity extends AppCompatActivity   {
                 int id = item.getItemId();
                 if(id==R.id.nav_home){
                     Toast.makeText(MainActivity.this,"Home",Toast.LENGTH_SHORT).show();
-                }else if(id==R.id.nav_edit){
-                    Log.i("MainActivity","nav_edit!!");
+                }else if(id==R.id.nav_search){
+                    Log.i("MainActivity","nav_search!!");
                     Context context = MainActivity.this;
-                    Intent intent = new Intent(context, EditActivity.class);
+                    Intent intent = new Intent(context, SearchActivity.class);
                     context.startActivity(intent);
                 }else if(id==R.id.nav_close){
                     Log.i("MainActivity","nav_close!!");

@@ -31,7 +31,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".EditActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
+        <activity android:name=".SearchActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>
         <activity android:name=".ConfigActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">

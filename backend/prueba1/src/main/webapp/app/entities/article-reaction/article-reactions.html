@@ -1,0 +1,64 @@
+<div>
+    <h2>Article Reactions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="article-reaction.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Article Reaction
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Article Reaction Type</span></th>
+                    <th><span>Article</span></th>
+                    <th><span>User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="articleReaction in vm.articleReactions track by articleReaction.id">
+                    <td><a ui-sref="article-reaction-detail({id:articleReaction.id})">{{articleReaction.id}}</a></td>
+                    <td>{{articleReaction.articleReactionType}}</td>
+                    <td>
+                        <a ui-sref="article-detail({id:articleReaction.article.id})">{{articleReaction.article.id}}</a>
+                    </td>
+                    <td>
+                        {{articleReaction.user.id}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="article-reaction-detail({id:articleReaction.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="article-reaction.edit({id:articleReaction.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="article-reaction.delete({id:articleReaction.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+entity UserPlus {
+  weigh String,
+  height String,
+  birthday ZonedDateTime,
+  sex String,
+  country String,
+  languaje String,
+  disabledPerfil Boolean,
+  showWeigh Boolean,
+  showHeight Boolean,
+  showBirthday Boolean,
+  showSex Boolean,
+  showCountry Boolean,
+  showLanguaje Boolean,
+  notificationNews Boolean,
+  options String
+}
+entity UserImagen {
+  userImagenName String,
+  userImagenPath String,
+  userImagenPathImage String,
+  userImagenMain Boolean
+}
+entity Friend {
+  friendType String
+}
+entity Hash {
+  hashName String,
+  hashType String
+}
+entity UserHash {
+}
+entity Article {
+  articleName String,
+  articleDescription String,
+  articleDateTime ZonedDateTime
+}
+entity ArticleHash {
+}
+entity ArticleReaction {
+  articleReactionType String
+}
+relationship OneToMany {
+  User{userPlus} to UserPlus
+}
+relationship OneToMany {
+  User{userImagen} to UserImagen
+}
+relationship OneToMany {
+  User{friend} to Friend{user1},
+  User{friend} to Friend{user2}
+}
+relationship OneToMany {
+  User{hash} to Hash
+}
+relationship OneToMany {
+  User{userHash} to UserHash,
+  Hash{userHash} to UserHash
+}
+relationship OneToMany {
+  User{article} to Article,
+  UserImagen{article} to Article
+}
+relationship OneToMany {
+  Hash{articleHash} to ArticleHash,
+  Article{articleHash} to ArticleHash
+}
+relationship OneToMany {
+  User{articleReaction} to ArticleReaction,
+  Article{articleReaction} to ArticleReaction
+}
+
+// Set service options to all except few
+service all with serviceImpl
+
+ 
+
