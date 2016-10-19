@@ -1,0 +1,54 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "userImagen",
+      "otherEntityName": "userImagen",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-many",
+      "relationshipName": "articleHash",
+      "otherEntityName": "articleHash",
+      "otherEntityRelationshipName": "article"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "one-to-many",
+      "relationshipName": "articleReaction",
+      "otherEntityName": "articleReaction",
+      "otherEntityRelationshipName": "article"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "articleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "articleDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "articleDateTime",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "changelogDate": "20161019074955",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "entityTableName": "article"
+}

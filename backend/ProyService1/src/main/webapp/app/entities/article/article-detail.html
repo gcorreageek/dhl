@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="proyService1App.article.detail.title">Article</span> {{vm.article.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyService1App.article.articleName">Article Name</span></dt>
+        <dd>
+            <span>{{vm.article.articleName}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.article.articleDescription">Article Description</span></dt>
+        <dd>
+            <span>{{vm.article.articleDescription}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.article.articleDateTime">Article Date Time</span></dt>
+        <dd>
+            <span>{{vm.article.articleDateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.article.userImagen">User Imagen</span></dt>
+        <dd>
+            <a ui-sref="user-imagen-detail({id:vm.article.userImagen.id})">{{vm.article.userImagen.id}}</a>
+        </dd>
+        <dt><span data-translate="proyService1App.article.user">User</span></dt>
+        <dd>
+            {{vm.article.user.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="article-detail.edit({id:vm.article.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

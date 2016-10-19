@@ -1,0 +1,37 @@
+{
+    "proyService1App": {
+        "userPlus" : {
+            "home": {
+                "title": "User Pluses",
+                "createLabel": "Criar novo User Plus",
+                "createOrEditLabel": "Criar ou editar User Plus",
+                "search": "Pesquisar por User Plus"
+            },
+            "created": "Um novo User Plus é criado com o identificador {{ param }}",
+            "updated": "Um User Plus é atualizado com o identificador {{ param }}",
+            "deleted": "Um User Plus é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir User Plus {{ id }}?"
+            },
+            "detail": {
+                "title": "User Plus"
+            },
+            "weigh": "Weigh",
+            "height": "Height",
+            "birthday": "Birthday",
+            "sex": "Sex",
+            "country": "Country",
+            "languaje": "Languaje",
+            "disabledPerfil": "Disabled Perfil",
+            "showWeigh": "Show Weigh",
+            "showHeight": "Show Height",
+            "showBirthday": "Show Birthday",
+            "showSex": "Show Sex",
+            "showCountry": "Show Country",
+            "showLanguaje": "Show Languaje",
+            "notificationNews": "Notification News",
+            "options": "Options",
+            "user": "User"
+        }
+    }
+}

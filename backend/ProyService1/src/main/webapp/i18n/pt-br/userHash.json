@@ -1,0 +1,23 @@
+{
+    "proyService1App": {
+        "userHash" : {
+            "home": {
+                "title": "User Hashes",
+                "createLabel": "Criar novo User Hash",
+                "createOrEditLabel": "Criar ou editar User Hash",
+                "search": "Pesquisar por User Hash"
+            },
+            "created": "Um novo User Hash é criado com o identificador {{ param }}",
+            "updated": "Um User Hash é atualizado com o identificador {{ param }}",
+            "deleted": "Um User Hash é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir User Hash {{ id }}?"
+            },
+            "detail": {
+                "title": "User Hash"
+            },
+            "hash": "Hash",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,126 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myUserPlusLabel" data-translate="proyService1App.userPlus.home.createOrEditLabel">Create or edit a User Plus</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.userPlus.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.userPlus.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.weigh" for="field_weigh">Weigh</label>
+            <input type="text" class="form-control" name="weigh" id="field_weigh"
+                    ng-model="vm.userPlus.weigh"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.height" for="field_height">Height</label>
+            <input type="text" class="form-control" name="height" id="field_height"
+                    ng-model="vm.userPlus.height"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.birthday" for="field_birthday">Birthday</label>
+                <div class="input-group">
+                    <input id="field_birthday" type="text" class="form-control" name="birthday" datetime-picker="{{dateformat}}" ng-model="vm.userPlus.birthday" is-open="vm.datePickerOpenStatus.birthday"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.sex" for="field_sex">Sex</label>
+            <input type="text" class="form-control" name="sex" id="field_sex"
+                    ng-model="vm.userPlus.sex"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.country" for="field_country">Country</label>
+            <input type="text" class="form-control" name="country" id="field_country"
+                    ng-model="vm.userPlus.country"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.languaje" for="field_languaje">Languaje</label>
+            <input type="text" class="form-control" name="languaje" id="field_languaje"
+                    ng-model="vm.userPlus.languaje"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.disabledPerfil" for="field_disabledPerfil">Disabled Perfil</label>
+            <input type="checkbox" class="form-control" name="disabledPerfil" id="field_disabledPerfil"
+                    ng-model="vm.userPlus.disabledPerfil"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showWeigh" for="field_showWeigh">Show Weigh</label>
+            <input type="checkbox" class="form-control" name="showWeigh" id="field_showWeigh"
+                    ng-model="vm.userPlus.showWeigh"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showHeight" for="field_showHeight">Show Height</label>
+            <input type="checkbox" class="form-control" name="showHeight" id="field_showHeight"
+                    ng-model="vm.userPlus.showHeight"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showBirthday" for="field_showBirthday">Show Birthday</label>
+            <input type="checkbox" class="form-control" name="showBirthday" id="field_showBirthday"
+                    ng-model="vm.userPlus.showBirthday"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showSex" for="field_showSex">Show Sex</label>
+            <input type="checkbox" class="form-control" name="showSex" id="field_showSex"
+                    ng-model="vm.userPlus.showSex"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showCountry" for="field_showCountry">Show Country</label>
+            <input type="checkbox" class="form-control" name="showCountry" id="field_showCountry"
+                    ng-model="vm.userPlus.showCountry"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.showLanguaje" for="field_showLanguaje">Show Languaje</label>
+            <input type="checkbox" class="form-control" name="showLanguaje" id="field_showLanguaje"
+                    ng-model="vm.userPlus.showLanguaje"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.notificationNews" for="field_notificationNews">Notification News</label>
+            <input type="checkbox" class="form-control" name="notificationNews" id="field_notificationNews"
+                    ng-model="vm.userPlus.notificationNews"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="proyService1App.userPlus.options" for="field_options">Options</label>
+            <input type="text" class="form-control" name="options" id="field_options"
+                    ng-model="vm.userPlus.options"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="proyService1App.userPlus.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.userPlus.user" ng-options="user as user.id for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

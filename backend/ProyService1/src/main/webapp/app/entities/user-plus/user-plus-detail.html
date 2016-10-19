@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="proyService1App.userPlus.detail.title">User Plus</span> {{vm.userPlus.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="proyService1App.userPlus.weigh">Weigh</span></dt>
+        <dd>
+            <span>{{vm.userPlus.weigh}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.height">Height</span></dt>
+        <dd>
+            <span>{{vm.userPlus.height}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.birthday">Birthday</span></dt>
+        <dd>
+            <span>{{vm.userPlus.birthday | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.sex">Sex</span></dt>
+        <dd>
+            <span>{{vm.userPlus.sex}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.country">Country</span></dt>
+        <dd>
+            <span>{{vm.userPlus.country}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.languaje">Languaje</span></dt>
+        <dd>
+            <span>{{vm.userPlus.languaje}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.disabledPerfil">Disabled Perfil</span></dt>
+        <dd>
+            <span>{{vm.userPlus.disabledPerfil}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showWeigh">Show Weigh</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showWeigh}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showHeight">Show Height</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showHeight}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showBirthday">Show Birthday</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showBirthday}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showSex">Show Sex</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showSex}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showCountry">Show Country</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showCountry}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.showLanguaje">Show Languaje</span></dt>
+        <dd>
+            <span>{{vm.userPlus.showLanguaje}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.notificationNews">Notification News</span></dt>
+        <dd>
+            <span>{{vm.userPlus.notificationNews}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.options">Options</span></dt>
+        <dd>
+            <span>{{vm.userPlus.options}}</span>
+        </dd>
+        <dt><span data-translate="proyService1App.userPlus.user">User</span></dt>
+        <dd>
+            {{vm.userPlus.user.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="user-plus-detail.edit({id:vm.userPlus.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
