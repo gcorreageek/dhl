@@ -20,10 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-
 public class ConfigActivity extends AppCompatActivity {
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +28,17 @@ public class ConfigActivity extends AppCompatActivity {
         Toolbar  toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-
     }
 }
+/*public class ConfigActivity extends PreferenceActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        addPreferencesFromResource(R.xml.activity_config);
+        PreferenceManager preferenceManager = getPreferenceManager();
+        if (preferenceManager.getSharedPreferences().getBoolean("pref_sync", true)){
+            // Your switch is on
+        } else {
+            // Your switch is off
+        }
+    }
+}*/

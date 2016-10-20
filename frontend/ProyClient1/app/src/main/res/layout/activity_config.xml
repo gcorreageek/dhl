@@ -24,20 +24,97 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:text="Config"
+
+
+    <Switch
+        android:text="Show Weigh?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/appbar"
-        android:layout_marginTop="195dp"
-        android:id="@+id/textView2"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/switchWeigh"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textAlignment="center"
-        android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-medium"
-        android:layout_alignParentStart="true"
-        android:textSize="36sp" />
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/appbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Show Height?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchHeight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchWeigh"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Show Birthday?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchBirthday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchHeight"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Show Sex?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchSex"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchBirthday"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Show Country?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchCountry"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchSex"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Show Languaje?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchLanguaje"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchCountry"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Notification News"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notificationNews"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/switchLanguaje"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Switch
+        android:text="Disabled Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/disabledProfile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textAlignment="textEnd"
+        android:textSize="14dp"
+        android:layout_below="@+id/notificationNews"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
 
 
 </RelativeLayout>

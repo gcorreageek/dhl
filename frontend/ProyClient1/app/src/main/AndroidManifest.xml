@@ -31,29 +31,62 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".SearchActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ConfigActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".ConfigActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".AboutActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".HelpActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".HelpActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".WebActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".WebActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ProfileActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".NewArticleActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme.AppLogin">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
+        <activity
+            android:name=".NewArticleActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.AppLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-
-
     </application>
 
 </manifest>

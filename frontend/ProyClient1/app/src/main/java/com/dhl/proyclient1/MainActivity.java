@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.Fragment;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity   {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         Adapter adapter = new Adapter(getSupportFragmentManager());
 
-        adapter.addFragment(new CardContentFragment(), null);
+        adapter.addFragment(new ListContentFragment(), null);
         adapter.addFragment(new CardContentFragment(), null);
         adapter.addFragment(new CardContentFragment(), null);
         viewPager.setAdapter(adapter);
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity   {
                 Intent intent = new Intent(context, NewArticleActivity.class);
                 context.startActivity(intent);
 
-                Snackbar.make(v, "Hello Snackbar!",Snackbar.LENGTH_LONG).show();
+//                Snackbar.make(v, "Hello Snackbar!",Snackbar.LENGTH_LONG).show();
             }
         });
 
