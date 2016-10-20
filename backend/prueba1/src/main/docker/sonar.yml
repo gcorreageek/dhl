@@ -1,8 +1,0 @@
-version: '2'
-services:
-    prueba1-sonar:
-        container_name: prueba1-sonar
-        image: sonarqube:5.6.1-alpine
-        ports:
-            - 9000:9000
-            - 9092:9092
