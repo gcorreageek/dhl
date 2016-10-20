@@ -16,18 +16,18 @@
 
 package com.dhl.proyclient1;
 
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
 
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
@@ -73,6 +73,26 @@ public class ProfileActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(tab.getPosition());
             }
         });
+
+//        textFollowing
+        TextView textFollowers = (TextView) findViewById(R.id.textFollowers);
+        textFollowers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = ProfileActivity.this;
+                Intent intent = new Intent(context, SearchActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        TextView textFollowing = (TextView) findViewById(R.id.textFollowing);
+        textFollowing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = ProfileActivity.this;
+                Intent intent = new Intent(context, SearchActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
@@ -105,5 +125,7 @@ public class ProfileActivity extends AppCompatActivity {
             return fragments[position];
         }
     }
+
+
 }
 

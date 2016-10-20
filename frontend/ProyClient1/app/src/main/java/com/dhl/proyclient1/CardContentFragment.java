@@ -83,21 +83,13 @@ public class CardContentFragment extends Fragment {
                 }
             });
 
-            ImageButton favoriteImageButton =
-                    (ImageButton) itemView.findViewById(R.id.favorite_button);
-            favoriteImageButton.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
-                    Snackbar.make(v, "Added to Favorite",
-                            Snackbar.LENGTH_LONG).show();
-                }
-            });
 
-            ImageButton shareImageButton = (ImageButton) itemView.findViewById(R.id.share_button);
+
+            ImageButton shareImageButton = (ImageButton) itemView.findViewById(R.id.favorite_button);
             shareImageButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v, "Share article",
+                    Snackbar.make(v, "Favorite Article",
                             Snackbar.LENGTH_LONG).show();
                 }
             });

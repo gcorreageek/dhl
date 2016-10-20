@@ -68,7 +68,7 @@ public class ListContentFragment extends Fragment {
         private final Drawable[] mPlaceAvators;
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
-            mPlaces = resources.getStringArray(R.array.places);
+            mPlaces = resources.getStringArray(R.array.profiless);
             mPlaceDesc = resources.getStringArray(R.array.place_desc);
             TypedArray a = resources.obtainTypedArray(R.array.place_avator);
             mPlaceAvators = new Drawable[a.length()];

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity   {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         Adapter adapter = new Adapter(getSupportFragmentManager());
 
-        adapter.addFragment(new ListContentFragment(), null);
+        adapter.addFragment(new CardContentFragment(), null);
         adapter.addFragment(new CardContentFragment(), null);
         adapter.addFragment(new CardContentFragment(), null);
         viewPager.setAdapter(adapter);
@@ -213,13 +213,6 @@ public class MainActivity extends AppCompatActivity   {
         Log.i("MainActivity","nav_edit!!");
         //noinspection SimplifiableIfStatement
 
-
-//        if (id == R.id.nav_profile) {
-//            Context context = MainActivity.this;
-//            Intent intent = new Intent(context, ProfileActivity.class);
-//            context.startActivity(intent);
-//            return true;
-//        } else
         if (id == android.R.id.home) {
             mDrawerLayout.openDrawer(GravityCompat.START);
         }

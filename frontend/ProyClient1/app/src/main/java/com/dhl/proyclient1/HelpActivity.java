@@ -19,13 +19,15 @@ package com.dhl.proyclient1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
 public class HelpActivity extends AppCompatActivity {
 
-
+    WebView myWebView ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,10 @@ public class HelpActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSeDfaL2yGeH2_6wFmbEz6T8cquEIUnHtmXGGPFPAR3UEAtdAA/viewform?c=0&w=1");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
     }
 }
