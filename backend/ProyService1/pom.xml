@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.hsn.serv</groupId>
+    <groupId>com.dhl.serv</groupId>
     <artifactId>proy-service-1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -575,7 +575,7 @@
                     <defaultSchemaName>ProyService1</defaultSchemaName>
                     <username>root</username>
                     <password></password>
-                    <referenceUrl>hibernate:spring:com.hsn.serv.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&amp;hibernate.ejb.naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy</referenceUrl>
+                    <referenceUrl>hibernate:spring:com.dhl.serv.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&amp;hibernate.ejb.naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>
@@ -774,6 +774,15 @@
                                 </goals>
                                 <configuration>
                                     <arguments>install</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm rebuild node-sass</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>rebuild node-sass</arguments>
                                 </configuration>
                             </execution>
                             <execution>

@@ -5,7 +5,7 @@ entity UserPlus {
   sex String,
   country String,
   languaje String,
-  disabledPerfil Boolean,
+  disabledProfile Boolean,
   showWeigh Boolean,
   showHeight Boolean,
   showBirthday Boolean,

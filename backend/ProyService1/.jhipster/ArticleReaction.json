@@ -22,7 +22,7 @@
       "fieldType": "String"
     }
   ],
-  "changelogDate": "20161019074957",
+  "changelogDate": "20161022023656",
   "dto": "no",
   "pagination": "no",
   "service": "serviceImpl",

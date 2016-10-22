@@ -110,7 +110,7 @@
                                 sex: null,
                                 country: null,
                                 languaje: null,
-                                disabledPerfil: null,
+                                disabledProfile: null,
                                 showWeigh: null,
                                 showHeight: null,
                                 showBirthday: null,

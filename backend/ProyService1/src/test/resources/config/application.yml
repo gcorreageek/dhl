@@ -22,7 +22,7 @@ spring:
         username:
         password:
     jpa:
-        database-platform: com.hsn.serv.domain.util.FixedH2Dialect
+        database-platform: com.dhl.serv.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
         show-sql: true
@@ -66,7 +66,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 737eb9ebd67fadbc910c6d48a47e55b0032c33ca
+                secret: 327048cbc2a99e22f691806ed85d85081ee633fa
                 # Token is valid 24 hours
                 tokenValidityInSeconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

@@ -2,8 +2,8 @@
   "generator-jhipster": {
     "jhipsterVersion": "3.8.0",
     "baseName": "ProyService1",
-    "packageName": "com.hsn.serv",
-    "packageFolder": "com/hsn/serv",
+    "packageName": "com.dhl.serv",
+    "packageFolder": "com/dhl/serv",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "hibernateCache": "no",
@@ -16,8 +16,8 @@
     "messageBroker": false,
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "737eb9ebd67fadbc910c6d48a47e55b0032c33ca",
-    "useSass": false,
+    "jwtSecretKey": "327048cbc2a99e22f691806ed85d85081ee633fa",
+    "useSass": true,
     "applicationType": "monolith",
     "testFrameworks": [
       "gatling"

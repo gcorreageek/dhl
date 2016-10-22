@@ -41,7 +41,7 @@
     },
     {
       "fieldId": 7,
-      "fieldName": "disabledPerfil",
+      "fieldName": "disabledProfile",
       "fieldType": "Boolean"
     },
     {
@@ -85,7 +85,7 @@
       "fieldType": "String"
     }
   ],
-  "changelogDate": "20161019074950",
+  "changelogDate": "20161022023649",
   "dto": "no",
   "pagination": "no",
   "service": "serviceImpl",

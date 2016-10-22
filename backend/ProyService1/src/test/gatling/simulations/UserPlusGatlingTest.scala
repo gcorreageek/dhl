@@ -68,7 +68,7 @@ class UserPlusGatlingTest extends Simulation {
             .exec(http("Create new userPlus")
             .post("/api/user-pluses")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "weigh":"SAMPLE_TEXT", "height":"SAMPLE_TEXT", "birthday":"2020-01-01T00:00:00.000Z", "sex":"SAMPLE_TEXT", "country":"SAMPLE_TEXT", "languaje":"SAMPLE_TEXT", "disabledPerfil":null, "showWeigh":null, "showHeight":null, "showBirthday":null, "showSex":null, "showCountry":null, "showLanguaje":null, "notificationNews":null, "options":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "weigh":"SAMPLE_TEXT", "height":"SAMPLE_TEXT", "birthday":"2020-01-01T00:00:00.000Z", "sex":"SAMPLE_TEXT", "country":"SAMPLE_TEXT", "languaje":"SAMPLE_TEXT", "disabledProfile":null, "showWeigh":null, "showHeight":null, "showBirthday":null, "showSex":null, "showCountry":null, "showLanguaje":null, "notificationNews":null, "options":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_userPlus_url"))).exitHereIfFailed
             .pause(10)

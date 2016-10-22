@@ -37,7 +37,7 @@
       "fieldType": "Boolean"
     }
   ],
-  "changelogDate": "20161019074951",
+  "changelogDate": "20161022023650",
   "dto": "no",
   "pagination": "no",
   "service": "serviceImpl",

@@ -18,7 +18,7 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: ProyService1
+        name: DHL
     profiles:
         # The commented value for `active` can be replaced with valid spring profiles to load.
         # Otherwise, it will be filled in by maven when building the WAR file
@@ -61,17 +61,17 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: ProyService1@localhost
+        from: soporte.proy.dhl@gmail.com
     swagger:
-        title: ProyService1 API
-        description: ProyService1 API documentation
+        title: DHL API
+        description: DHL API documentation
         version: 0.0.1
-        termsOfServiceUrl:
-        contactName:
-        contactUrl:
-        contactEmail:
-        license:
-        licenseUrl:
+        termsOfServiceUrl: https://gcorreageek.github.io/dhl/
+        contactName: soporte.proy.dhl@gmail.com
+        contactUrl: https://gcorreageek.github.io/dhl/
+        contactEmail: soporte.proy.dhl@gmail.com
+        license: Apache License, Version 2.0, January 2004
+        licenseUrl: https://raw.githubusercontent.com/gcorreageek/dhl/master/LICENSE
     ribbon:
         # comma seperated list of profiles to show a ribbon on the GUI
         displayOnActiveProfiles: dev
