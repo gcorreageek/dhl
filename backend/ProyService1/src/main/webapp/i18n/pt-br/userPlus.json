@@ -31,7 +31,22 @@
             "showLanguaje": "Show Languaje",
             "notificationNews": "Notification News",
             "options": "Options",
-            "user": "User"
+            "user": "User",
+            "sexes": {
+                "male": "Male",
+                "female": "Female"
+            },
+            "countries": {
+                "peru": "Peru",
+                "brazil": "Brazil",
+                "china": "China",
+                "usa": "Usa"
+            },
+            "languajes": {
+                "spanish": "Spanish",
+                "portuguese": "Portuguese",
+                "english": "English"
+            }
         }
     }
 }
