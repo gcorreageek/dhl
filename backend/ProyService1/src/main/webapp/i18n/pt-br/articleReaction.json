@@ -2,25 +2,25 @@
     "proyService1App": {
         "articleReaction" : {
             "home": {
-                "title": "Article Reactions",
-                "createLabel": "Criar novo Article Reaction",
-                "createOrEditLabel": "Criar ou editar Article Reaction",
-                "search": "Pesquisar por Article Reaction"
+                "title": "Artigo Reação",
+                "createLabel": "Criar novo Artigo Reação",
+                "createOrEditLabel": "Criar ou editar Artigo Reação",
+                "search": "Pesquisar por Artigo Reação"
             },
-            "created": "Um novo Article Reaction é criado com o identificador {{ param }}",
-            "updated": "Um Article Reaction é atualizado com o identificador {{ param }}",
-            "deleted": "Um Article Reaction é deletado com o identificador {{ param }}",
+            "created": "Um novo Artigo Reação é criado com o identificador {{ param }}",
+            "updated": "Um Artigo Reação é atualizado com o identificador {{ param }}",
+            "deleted": "Um Artigo Reação é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Article Reaction {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Artigo Reação {{ id }}?"
             },
             "detail": {
-                "title": "Article Reaction"
+                "title": "Artigo Reação"
             },
-            "articleReactionType": "Article Reaction Type",
-            "article": "Article",
-            "user": "User",
+            "articleReactionType": "Artigo Reação Tipo",
+            "article": "Artigo",
+            "user": "Usuário",
             "articleReactions": {
-                "love": "Love"
+                "love": "Adoro"
             }
         }
     }

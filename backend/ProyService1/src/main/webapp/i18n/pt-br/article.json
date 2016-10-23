@@ -2,27 +2,27 @@
     "proyService1App": {
         "article" : {
             "home": {
-                "title": "Articles",
-                "createLabel": "Criar novo Article",
-                "createOrEditLabel": "Criar ou editar Article",
-                "search": "Pesquisar por Article"
+                "title": "Artigo",
+                "createLabel": "Criar novo Artigo",
+                "createOrEditLabel": "Criar ou editar Artigo",
+                "search": "Pesquisar por Artigo"
             },
-            "created": "Um novo Article é criado com o identificador {{ param }}",
-            "updated": "Um Article é atualizado com o identificador {{ param }}",
-            "deleted": "Um Article é deletado com o identificador {{ param }}",
+            "created": "Um novo Artigo é criado com o identificador {{ param }}",
+            "updated": "Um Artigo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Artigo é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Article {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Artigo {{ id }}?"
             },
             "detail": {
-                "title": "Article"
+                "title": "Artigo"
             },
-            "articleName": "Article Name",
-            "articleDescription": "Article Description",
-            "articleDateTime": "Article Date Time",
-            "userImagen": "User Imagen",
-            "articleHash": "Article Hash",
-            "articleReaction": "Article Reaction",
-            "user": "User"
+            "articleName": "Artigo Nome",
+            "articleDescription": "Artigo Descrição",
+            "articleDateTime": "Artigo Data",
+            "userImagen": "Usuário Fotografia",
+            "articleHash": "Artigo Hash",
+            "articleReaction": "Artigo Reação",
+            "user": "Usuário"
         }
     }
 }

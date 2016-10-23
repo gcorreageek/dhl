@@ -1,5 +1,6 @@
 package com.dhl.serv.web.rest;
 
+import com.dhl.serv.security.UserDetailsService;
 import com.dhl.serv.security.jwt.JWTConfigurer;
 import com.dhl.serv.security.jwt.TokenProvider;
 import com.dhl.serv.web.rest.vm.LoginVM;
@@ -7,6 +8,8 @@ import com.dhl.serv.web.rest.vm.LoginVM;
 import java.util.Collections;
 
 import com.codahale.metrics.annotation.Timed;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,6 +27,8 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class UserJWTController {
 
+    private final Logger log = LoggerFactory.getLogger(UserJWTController.class);
+
     @Inject
     private TokenProvider tokenProvider;
 
@@ -33,7 +38,7 @@ public class UserJWTController {
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     @Timed
     public ResponseEntity<?> authorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
-
+        log.debug("user {},pass{}", loginVM.getUsername(),loginVM.getPassword());
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(loginVM.getUsername(), loginVM.getPassword());
 

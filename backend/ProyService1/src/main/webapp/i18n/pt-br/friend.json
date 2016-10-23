@@ -2,26 +2,26 @@
     "proyService1App": {
         "friend" : {
             "home": {
-                "title": "Friends",
-                "createLabel": "Criar novo Friend",
-                "createOrEditLabel": "Criar ou editar Friend",
-                "search": "Pesquisar por Friend"
+                "title": "Amigos",
+                "createLabel": "Criar novo Amigo",
+                "createOrEditLabel": "Criar ou editar Amigo",
+                "search": "Pesquisar por Amigo"
             },
-            "created": "Um novo Friend é criado com o identificador {{ param }}",
-            "updated": "Um Friend é atualizado com o identificador {{ param }}",
-            "deleted": "Um Friend é deletado com o identificador {{ param }}",
+            "created": "Um novo Amigo é criado com o identificador {{ param }}",
+            "updated": "Um Amigo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Amigo é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Friend {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Amigo {{ id }}?"
             },
             "detail": {
-                "title": "Friend"
+                "title": "Amigo"
             },
-            "friendType": "Friend Type",
-            "user1": "User 1",
-            "user2": "User 2",
+            "friendType": "Amigo Tipo",
+            "user1": "Usuário 1",
+            "user2": "Usuário 2",
             "friends" : {
-                "following": "Following",
-                "followers": "Followers"
+                "following": "Segue",
+                "followers": "Seguidores"
             }
         }
     }

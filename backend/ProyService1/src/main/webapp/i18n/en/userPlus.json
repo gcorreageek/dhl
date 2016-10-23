@@ -42,10 +42,11 @@
                 "china": "China",
                 "usa": "Usa"
             },
-            "languajes": {
+            "languages": {
                 "spanish": "Spanish",
                 "portuguese": "Portuguese",
-                "english": "English"
+                "english": "English",
+                "chinese": "Chinese"
             }
         }
     }

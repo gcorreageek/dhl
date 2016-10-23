@@ -7,14 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
-                "userPlus": "User Plus",
+                "userPlus": "Usuario Mas",
                 "userImagen": "User Imagen",
-                "friend": "Friend",
+                "friend": "Amigos",
                 "hash": "Hash",
-                "userHash": "User Hash",
-                "article": "Article",
-                "articleHash": "Article Hash",
-                "articleReaction": "Article Reaction",
+                "userHash": "Usuario Hash",
+                "article": "Articulo",
+                "articleHash": "Articulo Hash",
+                "articleReaction": "Articulo Reacción",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

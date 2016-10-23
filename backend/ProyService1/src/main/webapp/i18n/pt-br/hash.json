@@ -2,7 +2,7 @@
     "proyService1App": {
         "hash" : {
             "home": {
-                "title": "Hashes",
+                "title": "Hash",
                 "createLabel": "Criar novo Hash",
                 "createOrEditLabel": "Criar ou editar Hash",
                 "search": "Pesquisar por Hash"
@@ -16,11 +16,11 @@
             "detail": {
                 "title": "Hash"
             },
-            "hashName": "Hash Name",
-            "hashType": "Hash Type",
-            "userHash": "User Hash",
-            "articleHash": "Article Hash",
-            "user": "User",
+            "hashName": "Hash Nome",
+            "hashType": "Hash Tipo",
+            "userHash": "Usuário Hash",
+            "articleHash": "Artigo Hash",
+            "user": "Usuário",
             "hashs": {
                 "hash": "Hash",
                 "antiHash": "Anti Hash"

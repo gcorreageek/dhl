@@ -2,50 +2,51 @@
     "proyService1App": {
         "userPlus" : {
             "home": {
-                "title": "User Pluses",
-                "createLabel": "Create a new User Plus",
-                "createOrEditLabel": "Create or edit a User Plus",
-                "search": "Search for User Plus"
+                "title": "用户加",
+                "createLabel": "创建新的 用户加",
+                "createOrEditLabel": "创建或编辑 用户加",
+                "search": "寻找 用户加"
             },
-            "created": "A new User Plus is created with identifier {{ param }}",
-            "updated": "A User Plus is updated with identifier {{ param }}",
-            "deleted": "A User Plus is deleted with identifier {{ param }}",
+            "created": "一个新的 用户加 使用标识符创建 {{ param }}",
+            "updated": "用户加 用标识符更新 {{ param }}",
+            "deleted": "用户加 用标识符更新 {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete User Plus {{ id }}?"
+                "question": "你确定你要删除 用户加 {{ id }}?"
             },
             "detail": {
-                "title": "User Plus"
+                "title": "用户加"
             },
-            "weigh": "Weigh",
-            "height": "Height",
-            "birthday": "Birthday",
-            "sex": "Sex",
-            "country": "Country",
-            "languaje": "Languaje",
-            "disabledProfile": "Disabled Profile",
-            "showWeigh": "Show Weigh",
-            "showHeight": "Show Height",
-            "showBirthday": "Show Birthday",
-            "showSex": "Show Sex",
-            "showCountry": "Show Country",
-            "showLanguaje": "Show Languaje",
-            "notificationNews": "Notification News",
-            "options": "Options",
-            "user": "User",
+            "weigh": "称重",
+            "height": "高度",
+            "birthday": "生日",
+            "sex": "性别",
+            "country": "国家",
+            "languaje": "语言",
+            "disabledProfile": "已禁用配置文件",
+            "showWeigh": "显示 称重",
+            "showHeight": "显示 高度",
+            "showBirthday": "显示 生日",
+            "showSex": "显示 性别",
+            "showCountry": "显示 国家",
+            "showLanguaje": "显示 语言",
+            "notificationNews": "通知新闻",
+            "options": "选项",
+            "user": "用户",
             "sexes": {
-                "male": "Male",
-                "female": "Female"
+                "male": "男",
+                "female": "女"
             },
             "countries": {
-                "peru": "Peru",
-                "brazil": "Brazil",
-                "china": "China",
-                "usa": "Usa"
+                "peru": " 秘鲁(Peru)",
+                "brazil": "巴西(Brazil)",
+                "china": "中国(China)",
+                "usa": "使用(USA)"
             },
-            "languajes": {
-                "spanish": "Spanish",
-                "portuguese": "Portuguese",
-                "english": "English"
+            "languages": {
+                "spanish": "西班牙语(Spanish)",
+                "portuguese": "葡萄牙语(Portuguese)",
+                "english": "英语(English)",
+                "chinese": "中文(Chinese)"
             }
         }
     }

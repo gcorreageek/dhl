@@ -2,50 +2,51 @@
     "proyService1App": {
         "userPlus" : {
             "home": {
-                "title": "User Pluses",
-                "createLabel": "Criar novo User Plus",
-                "createOrEditLabel": "Criar ou editar User Plus",
-                "search": "Pesquisar por User Plus"
+                "title": "Usuário Mais",
+                "createLabel": "Criar novo Usuário Mais",
+                "createOrEditLabel": "Criar ou editar Usuário Mais",
+                "search": "Pesquisar por Usuário Plus"
             },
-            "created": "Um novo User Plus é criado com o identificador {{ param }}",
-            "updated": "Um User Plus é atualizado com o identificador {{ param }}",
-            "deleted": "Um User Plus é deletado com o identificador {{ param }}",
+            "created": "Um novo Usuário Mais é criado com o identificador {{ param }}",
+            "updated": "Um Usuário Mais é atualizado com o identificador {{ param }}",
+            "deleted": "Um Usuário Mais é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir User Plus {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Usuário Mais {{ id }}?"
             },
             "detail": {
-                "title": "User Plus"
+                "title": "Usuário Mais"
             },
-            "weigh": "Weigh",
-            "height": "Height",
-            "birthday": "Birthday",
-            "sex": "Sex",
-            "country": "Country",
-            "languaje": "Languaje",
-            "disabledProfile": "Disabled Profile",
-            "showWeigh": "Show Weigh",
-            "showHeight": "Show Height",
-            "showBirthday": "Show Birthday",
-            "showSex": "Show Sex",
-            "showCountry": "Show Country",
-            "showLanguaje": "Show Languaje",
-            "notificationNews": "Notification News",
-            "options": "Options",
-            "user": "User",
+            "weigh": "Pesar",
+            "height": "Altura",
+            "birthday": "Aniversário",
+            "sex": "Sexo",
+            "country": "País",
+            "languaje": "Língua",
+            "disabledProfile": "Perfil desativado",
+            "showWeigh": "Mostrar Pesar",
+            "showHeight": "Mostrar Altura",
+            "showBirthday": "Mostrar Aniversário",
+            "showSex": "Mostrar Sexo",
+            "showCountry": "Mostrar País",
+            "showLanguaje": "Mostrar Língua",
+            "notificationNews": "Notícias notificação",
+            "options": "Opções",
+            "user": "Usuário",
             "sexes": {
-                "male": "Male",
-                "female": "Female"
+                "male": "Masculino",
+                "female": "Fêmea"
             },
             "countries": {
                 "peru": "Peru",
-                "brazil": "Brazil",
+                "brazil": "Brasil",
                 "china": "China",
                 "usa": "Usa"
             },
-            "languajes": {
-                "spanish": "Spanish",
-                "portuguese": "Portuguese",
-                "english": "English"
+            "languages": {
+                "spanish": "Espanhol",
+                "portuguese": "Português",
+                "english": "Inglês",
+                "chinese": "Chinês"
             }
         }
     }

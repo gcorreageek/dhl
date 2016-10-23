@@ -34,10 +34,10 @@
                     <td>{{article.articleDescription}}</td>
                     <td>{{article.articleDateTime | date:'medium'}}</td>
                     <td>
-                        <a ui-sref="user-imagen-detail({id:article.userImagen.id})">{{article.userImagen.id}}</a>
+                        <a ui-sref="user-imagen-detail({id:article.userImagen.id})">{{article.userImagen.userImagenName}}</a>
                     </td>
                     <td>
-                        {{article.user.id}}
+                        {{article.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

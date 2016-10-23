@@ -2,26 +2,26 @@
     "proyService1App": {
         "userImagen" : {
             "home": {
-                "title": "User Imagens",
-                "createLabel": "Criar novo User Imagen",
-                "createOrEditLabel": "Criar ou editar User Imagen",
-                "search": "Pesquisar por User Imagen"
+                "title": "Usuário Imagen",
+                "createLabel": "Criar novo Usuário Imagen",
+                "createOrEditLabel": "Criar ou editar Usuário Imagen",
+                "search": "Pesquisar por Usuário Imagen"
             },
-            "created": "Um novo User Imagen é criado com o identificador {{ param }}",
-            "updated": "Um User Imagen é atualizado com o identificador {{ param }}",
-            "deleted": "Um User Imagen é deletado com o identificador {{ param }}",
+            "created": "Um novo Usuário Imagen é criado com o identificador {{ param }}",
+            "updated": "Um Usuário Imagen é atualizado com o identificador {{ param }}",
+            "deleted": "Um Usuário Imagen é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir User Imagen {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Usuário Imagen {{ id }}?"
             },
             "detail": {
-                "title": "User Imagen"
+                "title": "Usuário Imagen"
             },
-            "userImagenName": "User Imagen Name",
-            "userImagenPath": "User Imagen Path",
-            "userImagenPathImage": "User Imagen Path Image",
-            "userImagenMain": "User Imagen Main",
-            "article": "Article",
-            "user": "User"
+            "userImagenName": "Nome",
+            "userImagenPath": "Imagen Path Web",
+            "userImagenPathImage": "Imagen Base64",
+            "userImagenMain": "Imagen Principal",
+            "article": "Artigo",
+            "user": "Usuário"
         }
     }
 }

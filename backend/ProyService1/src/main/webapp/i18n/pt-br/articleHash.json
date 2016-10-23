@@ -2,22 +2,22 @@
     "proyService1App": {
         "articleHash" : {
             "home": {
-                "title": "Article Hashes",
-                "createLabel": "Criar novo Article Hash",
-                "createOrEditLabel": "Criar ou editar Article Hash",
-                "search": "Pesquisar por Article Hash"
+                "title": "Artigo Hash",
+                "createLabel": "Criar novo Artigo Hash",
+                "createOrEditLabel": "Criar ou editar Artigo Hash",
+                "search": "Pesquisar por Artigo Hash"
             },
-            "created": "Um novo Article Hash é criado com o identificador {{ param }}",
-            "updated": "Um Article Hash é atualizado com o identificador {{ param }}",
-            "deleted": "Um Article Hash é deletado com o identificador {{ param }}",
+            "created": "Um novo Artigo Hash é criado com o identificador {{ param }}",
+            "updated": "Um Artigo Hash é atualizado com o identificador {{ param }}",
+            "deleted": "Um Artigo Hash é deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Article Hash {{ id }}?"
+                "question": "Tem certeza de que deseja excluir Artigo Hash {{ id }}?"
             },
             "detail": {
-                "title": "Article Hash"
+                "title": "Artigo Hash"
             },
             "hash": "Hash",
-            "article": "Article"
+            "article": "Artigo"
         }
     }
 }
