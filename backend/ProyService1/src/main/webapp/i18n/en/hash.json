@@ -20,7 +20,11 @@
             "hashType": "Hash Type",
             "userHash": "User Hash",
             "articleHash": "Article Hash",
-            "user": "User"
+            "user": "User",
+            "hashs": {
+                "hash": "Hash",
+                "antiHash": "Anti Hash"
+            }
         }
     }
 }

@@ -15,20 +15,22 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="proyService1App.friend.friendType" for="field_friendType">Friend Type</label>
-            <input type="text" class="form-control" name="friendType" id="field_friendType"
-                    ng-model="vm.friend.friendType"
-                     />
+            <select class="form-control" id="field_friendType" name="friendType" ng-model="vm.friend.friendType" >
+                <option value=""></option>
+                <option value="{{ 'proyService1App.friend.friends.following' | translate }}">{{ 'proyService1App.friend.friends.following' | translate }}</option>
+                <option value="{{ 'proyService1App.friend.friends.followers' | translate }}">{{ 'proyService1App.friend.friends.followers' | translate }}</option>
+            </select>
         </div>
 
         <div class="form-group">
             <label data-translate="proyService1App.friend.user1" for="field_user1">User 1</label>
-            <select class="form-control" id="field_user1" name="user1" ng-model="vm.friend.user1" ng-options="user as user.id for user in vm.users track by user.id">
+            <select class="form-control" id="field_user1" name="user1" ng-model="vm.friend.user1" ng-options="user as user.login for user in vm.users track by user.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="proyService1App.friend.user2" for="field_user2">User 2</label>
-            <select class="form-control" id="field_user2" name="user2" ng-model="vm.friend.user2" ng-options="user as user.id for user in vm.users track by user.id">
+            <select class="form-control" id="field_user2" name="user2" ng-model="vm.friend.user2" ng-options="user as user.login for user in vm.users track by user.id">
                 <option value=""></option>
             </select>
         </div>

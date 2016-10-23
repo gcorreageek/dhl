@@ -21,14 +21,16 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="proyService1App.hash.hashType" for="field_hashType">Hash Type</label>
-            <input type="text" class="form-control" name="hashType" id="field_hashType"
-                    ng-model="vm.hash.hashType"
-                     />
+            <select class="form-control" id="field_hashType" name="hashType" ng-model="vm.hash.hashType" >
+                <option value=""></option>
+                <option value="{{ 'proyService1App.hash.hashs.hash' | translate }}">{{ 'proyService1App.hash.hashs.hash' | translate }}</option>
+                <option value="{{ 'proyService1App.hash.hashs.antiHash' | translate }}">{{ 'proyService1App.hash.hashs.antiHash' | translate }}</option>
+            </select>
         </div>
 
         <div class="form-group">
             <label data-translate="proyService1App.hash.user" for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user" ng-model="vm.hash.user" ng-options="user as user.id for user in vm.users track by user.id">
+            <select class="form-control" id="field_user" name="user" ng-model="vm.hash.user" ng-options="user as user.login for user in vm.users track by user.id">
                 <option value=""></option>
             </select>
         </div>

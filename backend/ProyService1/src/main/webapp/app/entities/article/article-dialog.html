@@ -38,13 +38,13 @@
 
         <div class="form-group">
             <label data-translate="proyService1App.article.userImagen" for="field_userImagen">User Imagen</label>
-            <select class="form-control" id="field_userImagen" name="userImagen" ng-model="vm.article.userImagen" ng-options="userImagen as userImagen.id for userImagen in vm.userimagens track by userImagen.id">
+            <select class="form-control" id="field_userImagen" name="userImagen" ng-model="vm.article.userImagen" ng-options="userImagen as userImagen.userImagenName for userImagen in vm.userimagens track by userImagen.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="proyService1App.article.user" for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user" ng-model="vm.article.user" ng-options="user as user.id for user in vm.users track by user.id">
+            <select class="form-control" id="field_user" name="user" ng-model="vm.article.user" ng-options="user as user.login for user in vm.users track by user.id">
                 <option value=""></option>
             </select>
         </div>

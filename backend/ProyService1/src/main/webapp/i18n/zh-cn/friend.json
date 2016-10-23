@@ -18,7 +18,12 @@
             },
             "friendType": "Friend Type",
             "user1": "User 1",
-            "user2": "User 2"
+            "user2": "User 2",
+            "friends" : {
+                "following": "Following",
+                "followers": "Followers"
+            }
+
         }
     }
 }

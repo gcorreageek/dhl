@@ -21,6 +21,9 @@ public final class Constants {
 
     public static final String SYSTEM_ACCOUNT = "system";
 
+    public static final String PATH_PROJECT = System.getProperty("user.dir");
+    public static final String PATH_PROJECT_IMAGE_UPLOAD = System.getProperty("user.dir")+"/src/main/webapp/content/images/upload/";
+
     private Constants() {
     }
 }

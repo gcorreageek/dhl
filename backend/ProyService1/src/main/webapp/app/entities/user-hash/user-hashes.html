@@ -28,10 +28,10 @@
                 <tr ng-repeat="userHash in vm.userHashes track by userHash.id">
                     <td><a ui-sref="user-hash-detail({id:userHash.id})">{{userHash.id}}</a></td>
                     <td>
-                        <a ui-sref="hash-detail({id:userHash.hash.id})">{{userHash.hash.id}}</a>
+                        <a ui-sref="hash-detail({id:userHash.hash.id})">{{userHash.hash.hashName}}</a>
                     </td>
                     <td>
-                        {{userHash.user.id}}
+                        {{userHash.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

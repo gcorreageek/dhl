@@ -1,14 +1,22 @@
 package com.dhl.serv.service.impl;
 
+import com.dhl.serv.config.Constants;
 import com.dhl.serv.service.UserImagenService;
 import com.dhl.serv.domain.UserImagen;
 import com.dhl.serv.repository.UserImagenRepository;
+import com.dhl.serv.service.util.ImageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -19,7 +27,7 @@ import java.util.List;
 public class UserImagenServiceImpl implements UserImagenService{
 
     private final Logger log = LoggerFactory.getLogger(UserImagenServiceImpl.class);
-    
+
     @Inject
     private UserImagenRepository userImagenRepository;
 
@@ -29,18 +37,27 @@ public class UserImagenServiceImpl implements UserImagenService{
      * @param userImagen the entity to save
      * @return the persisted entity
      */
-    public UserImagen save(UserImagen userImagen) {
+    public UserImagen save(UserImagen userImagen) throws IOException {
         log.debug("Request to save UserImagen : {}", userImagen);
         UserImagen result = userImagenRepository.save(userImagen);
+        byte[] imageByteArray = ImageUtil.decodeImage(result.getUserImagenPathImage());
+        OutputStream out = null;
+        try {
+            System.getProperty("user.dir");
+            out = new BufferedOutputStream(new FileOutputStream(Constants.PATH_PROJECT_IMAGE_UPLOAD+result.getId()+".png"));
+            out.write(imageByteArray);
+        } finally {
+            if (out != null) out.close();
+        }
         return result;
     }
 
     /**
      *  Get all the userImagens.
-     *  
+     *
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<UserImagen> findAll() {
         log.debug("Request to get all UserImagens");
         List<UserImagen> result = userImagenRepository.findAll();
@@ -54,7 +71,7 @@ public class UserImagenServiceImpl implements UserImagenService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public UserImagen findOne(Long id) {
         log.debug("Request to get UserImagen : {}", id);
         UserImagen userImagen = userImagenRepository.findOne(id);

@@ -2,6 +2,8 @@ package com.dhl.serv.service;
 
 import com.dhl.serv.domain.UserImagen;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -15,11 +17,11 @@ public interface UserImagenService {
      * @param userImagen the entity to save
      * @return the persisted entity
      */
-    UserImagen save(UserImagen userImagen);
+    UserImagen save(UserImagen userImagen) throws IOException;
 
     /**
      *  Get all the userImagens.
-     *  
+     *
      *  @return the list of entities
      */
     List<UserImagen> findAll();

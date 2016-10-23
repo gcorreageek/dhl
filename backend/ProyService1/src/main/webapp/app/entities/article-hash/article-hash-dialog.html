@@ -16,13 +16,13 @@
 
         <div class="form-group">
             <label data-translate="proyService1App.articleHash.hash" for="field_hash">Hash</label>
-            <select class="form-control" id="field_hash" name="hash" ng-model="vm.articleHash.hash" ng-options="hash as hash.id for hash in vm.hashes track by hash.id">
+            <select class="form-control" id="field_hash" name="hash" ng-model="vm.articleHash.hash" ng-options="hash as hash.hashName for hash in vm.hashes track by hash.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="proyService1App.articleHash.article" for="field_article">Article</label>
-            <select class="form-control" id="field_article" name="article" ng-model="vm.articleHash.article" ng-options="article as article.id for article in vm.articles track by article.id">
+            <select class="form-control" id="field_article" name="article" ng-model="vm.articleHash.article" ng-options="article as article.articleName for article in vm.articles track by article.id">
                 <option value=""></option>
             </select>
         </div>

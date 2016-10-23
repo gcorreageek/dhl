@@ -28,10 +28,10 @@
                 <tr ng-repeat="articleHash in vm.articleHashes track by articleHash.id">
                     <td><a ui-sref="article-hash-detail({id:articleHash.id})">{{articleHash.id}}</a></td>
                     <td>
-                        <a ui-sref="hash-detail({id:articleHash.hash.id})">{{articleHash.hash.id}}</a>
+                        <a ui-sref="hash-detail({id:articleHash.hash.id})">{{articleHash.hash.hashName}}</a>
                     </td>
                     <td>
-                        <a ui-sref="article-detail({id:articleHash.article.id})">{{articleHash.article.id}}</a>
+                        <a ui-sref="article-detail({id:articleHash.article.id})">{{articleHash.article.articleName}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

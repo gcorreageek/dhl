@@ -21,7 +21,7 @@
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="proyService1App.userImagen.userImagenName">User Imagen Name</span></th>
                     <th><span data-translate="proyService1App.userImagen.userImagenPath">User Imagen Path</span></th>
-                    <th><span data-translate="proyService1App.userImagen.userImagenPathImage">User Imagen Path Image</span></th>
+                    <th ng-hide="true" ><span data-translate="proyService1App.userImagen.userImagenPathImage">User Imagen Path Image</span></th>
                     <th><span data-translate="proyService1App.userImagen.userImagenMain">User Imagen Main</span></th>
                     <th><span data-translate="proyService1App.userImagen.user">User</span></th>
                     <th></th>
@@ -32,10 +32,10 @@
                     <td><a ui-sref="user-imagen-detail({id:userImagen.id})">{{userImagen.id}}</a></td>
                     <td>{{userImagen.userImagenName}}</td>
                     <td>{{userImagen.userImagenPath}}</td>
-                    <td>{{userImagen.userImagenPathImage}}</td>
+                    <td ng-hide="true" >{{userImagen.userImagenPathImage}}</td>
                     <td>{{userImagen.userImagenMain}}</td>
                     <td>
-                        {{userImagen.user.id}}
+                        {{userImagen.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

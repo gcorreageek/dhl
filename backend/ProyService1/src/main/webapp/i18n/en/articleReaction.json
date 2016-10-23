@@ -18,7 +18,10 @@
             },
             "articleReactionType": "Article Reaction Type",
             "article": "Article",
-            "user": "User"
+            "user": "User",
+            "articleReactions": {
+                "love": "Love"
+            }
         }
     }
 }

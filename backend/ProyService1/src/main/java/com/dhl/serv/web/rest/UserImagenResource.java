@@ -4,6 +4,8 @@ import com.codahale.metrics.annotation.Timed;
 import com.dhl.serv.domain.UserImagen;
 import com.dhl.serv.service.UserImagenService;
 import com.dhl.serv.web.rest.util.HeaderUtil;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -13,8 +15,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +32,7 @@ import java.util.Optional;
 public class UserImagenResource {
 
     private final Logger log = LoggerFactory.getLogger(UserImagenResource.class);
-        
+
     @Inject
     private UserImagenService userImagenService;
 
@@ -46,7 +52,13 @@ public class UserImagenResource {
         if (userImagen.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("userImagen", "idexists", "A new userImagen cannot already have an ID")).body(null);
         }
-        UserImagen result = userImagenService.save(userImagen);
+        UserImagen result = null;
+        try {
+
+            result = userImagenService.save(userImagen);
+        } catch (IOException e) {
+            log.error("error IOException", e);
+        }
         return ResponseEntity.created(new URI("/api/user-imagens/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("userImagen", result.getId().toString()))
             .body(result);
@@ -70,11 +82,18 @@ public class UserImagenResource {
         if (userImagen.getId() == null) {
             return createUserImagen(userImagen);
         }
-        UserImagen result = userImagenService.save(userImagen);
+        UserImagen result = null;
+        try {
+            result = userImagenService.save(userImagen);
+        } catch (IOException e) {
+            log.error("error IOException",e);
+        }
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("userImagen", userImagen.getId().toString()))
             .body(result);
     }
+
+
 
     /**
      * GET  /user-imagens : get all the userImagens.

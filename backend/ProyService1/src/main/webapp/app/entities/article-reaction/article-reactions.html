@@ -30,10 +30,10 @@
                     <td><a ui-sref="article-reaction-detail({id:articleReaction.id})">{{articleReaction.id}}</a></td>
                     <td>{{articleReaction.articleReactionType}}</td>
                     <td>
-                        <a ui-sref="article-detail({id:articleReaction.article.id})">{{articleReaction.article.id}}</a>
+                        <a ui-sref="article-detail({id:articleReaction.article.id})">{{articleReaction.article.articleName}}</a>
                     </td>
                     <td>
-                        {{articleReaction.user.id}}
+                        {{articleReaction.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
