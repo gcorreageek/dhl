@@ -9,7 +9,7 @@
 
     function UserPlusController ($scope, $state, UserPlus) {
         var vm = this;
-        
+
         vm.userPluses = [];
 
         loadAll();

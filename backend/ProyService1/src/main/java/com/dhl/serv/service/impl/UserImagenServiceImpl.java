@@ -4,7 +4,7 @@ import com.dhl.serv.config.Constants;
 import com.dhl.serv.service.UserImagenService;
 import com.dhl.serv.domain.UserImagen;
 import com.dhl.serv.repository.UserImagenRepository;
-import com.dhl.serv.service.util.ImageUtil;
+import com.dhl.serv.service.util.ImagesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,11 +12,6 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Base64;
 import java.util.List;
 
 /**
@@ -40,7 +35,7 @@ public class UserImagenServiceImpl implements UserImagenService{
     public UserImagen save(UserImagen userImagen) throws IOException {
         log.debug("Request to save UserImagen : {}", userImagen);
         UserImagen result = userImagenRepository.save(userImagen);
-        byte[] imageByteArray = ImageUtil.decodeImage(result.getUserImagenPathImage());
+        byte[] imageByteArray = ImagesUtil.decodeImage(result.getUserImagenPathImage());
         OutputStream out = null;
         try {
             System.getProperty("user.dir");

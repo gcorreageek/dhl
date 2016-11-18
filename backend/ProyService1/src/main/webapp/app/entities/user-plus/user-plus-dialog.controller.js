@@ -5,17 +5,33 @@
         .module('proyService1App')
         .controller('UserPlusDialogController', UserPlusDialogController);
 
-    UserPlusDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserPlus', 'User'];
+    UserPlusDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserPlus', 'User','Principal' ];
 
-    function UserPlusDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, UserPlus, User) {
+    // HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+
+
+    function UserPlusDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, UserPlus, User,Principal) {
         var vm = this;
-
+        console.log('la conhateuymfe');
+        Principal.identity().then(function (user) {
+            var data = {
+                user: user
+            };
+            console.log(data);
+            console.log(data.user.authorities);
+            vm.users = User.query({auth:data.user.authorities[0]});
+        });
+        console.log(UserPlus);
         vm.userPlus = entity;
+        // console.log(entity2);
         vm.clear = clear;
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
-        vm.users = User.query();
+
+
+
+
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -27,6 +43,9 @@
 
         function save () {
             vm.isSaving = true;
+
+
+
             if (vm.userPlus.id !== null) {
                 UserPlus.update(vm.userPlus, onSaveSuccess, onSaveError);
             } else {
@@ -49,5 +68,7 @@
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
         }
+
+
     }
 })();

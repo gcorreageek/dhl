@@ -861,6 +861,7 @@
                 <logback.loglevel>INFO</logback.loglevel>
                 <!-- default Spring profiles -->
                 <spring.profiles.active>prod${profile.swagger}${profile.no-liquibase}</spring.profiles.active>
+                <!--<start-class>com.dhl.serv.ProyService1App</start-class>-->
             </properties>
         </profile>
     </profiles>

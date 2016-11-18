@@ -14,6 +14,7 @@
         vm.clear = clear;
         vm.save = save;
         vm.hashes = Hash.query();
+        console.log(vm.hashes);
         vm.users = User.query();
 
         $timeout(function (){

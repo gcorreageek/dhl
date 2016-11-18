@@ -5,7 +5,7 @@
         .module('proyService1App')
         .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
+    stateConfig.$inject = ['$stateProvider' ];
 
     function stateConfig($stateProvider) {
         $stateProvider
@@ -69,6 +69,7 @@
             data: {
                 authorities: ['ROLE_USER']
             },
+            // UserPlusDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserPlus', 'User' ]
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
                     templateUrl: 'app/entities/user-plus/user-plus-dialog.html',
@@ -144,9 +145,9 @@
                     backdrop: 'static',
                     size: 'lg',
                     resolve: {
-                        entity: ['UserPlus', function(UserPlus) {
-                            return UserPlus.get({id : $stateParams.id}).$promise;
-                        }]
+                        entity: ['UserPlus', function(UserPlus) {return UserPlus.get({id : $stateParams.id}).$promise;}]
+                        // ,
+                        // entity2: ['UserPlus2', function(UserPlus) {return UserPlus.get({id : $stateParams.id}).$promise;}]
                     }
                 }).result.then(function() {
                     $state.go('user-plus', null, { reload: 'user-plus' });

@@ -38,7 +38,7 @@ public class TokenProvider {
     public void init() {
         this.secretKey =
             jHipsterProperties.getSecurity().getAuthentication().getJwt().getSecret();
-
+        log.info("secretKey:{}",secretKey);
         this.tokenValidityInSeconds =
             1000 * jHipsterProperties.getSecurity().getAuthentication().getJwt().getTokenValidityInSeconds();
         this.tokenValidityInSecondsForRememberMe =
@@ -46,6 +46,7 @@ public class TokenProvider {
     }
 
     public String createToken(Authentication authentication, Boolean rememberMe) {
+        log.info("authentication:{}",authentication.getName());
         String authorities = authentication.getAuthorities().stream()
             .map(authority -> authority.getAuthority())
             .collect(Collectors.joining(","));
@@ -67,6 +68,8 @@ public class TokenProvider {
     }
 
     public Authentication getAuthentication(String token) {
+        log.info("token:{}",token);
+        log.info("secretKey:{}",secretKey);
         Claims claims = Jwts.parser()
             .setSigningKey(secretKey)
             .parseClaimsJws(token)
@@ -76,6 +79,7 @@ public class TokenProvider {
             Arrays.asList(claims.get(AUTHORITIES_KEY).toString().split(",")).stream()
                 .map(authority -> new SimpleGrantedAuthority(authority))
                 .collect(Collectors.toList());
+//        log.info(authorities);
 
         User principal = new User(claims.getSubject(), "",
             authorities);
@@ -84,6 +88,8 @@ public class TokenProvider {
     }
 
     public boolean validateToken(String authToken) {
+        log.info("authToken:{}",authToken);
+        log.info("secretKey:{}",secretKey);
         try {
             Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
             return true;

@@ -3,6 +3,7 @@ package com.dhl.serv.web.rest;
 import com.dhl.serv.config.Constants;
 import com.codahale.metrics.annotation.Timed;
 import com.dhl.serv.domain.User;
+import com.dhl.serv.domain.UserPlus;
 import com.dhl.serv.repository.UserRepository;
 import com.dhl.serv.security.AuthoritiesConstants;
 import com.dhl.serv.service.MailService;
@@ -146,7 +147,7 @@ public class UserResource {
 
     /**
      * GET  /users : get all users.
-     * 
+     *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and with body all users
      * @throws URISyntaxException if the pagination headers couldn't be generated
@@ -157,12 +158,28 @@ public class UserResource {
     @Timed
     public ResponseEntity<List<ManagedUserVM>> getAllUsers(Pageable pageable)
         throws URISyntaxException {
+
+        List<User>   ll = userRepository.findUserByName(AuthoritiesConstants.MOBILE);
+        log.debug("sie:"+ll.size());
+
+
         Page<User> page = userRepository.findAllWithAuthorities(pageable);
         List<ManagedUserVM> managedUserVMs = page.getContent().stream()
             .map(ManagedUserVM::new)
             .collect(Collectors.toList());
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/users");
         return new ResponseEntity<>(managedUserVMs, headers, HttpStatus.OK);
+    }
+    @RequestMapping(value = "/users/{auth}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<User> getAllUserMobile(@PathVariable String auth) {
+        log.debug("loginloginloginloginloginloginloginloginloginloginloginloginloginauth:"+auth);
+        List<User>   ll = userRepository.findUserByName(auth);
+        log.debug("sie:"+ll.size());
+
+        return ll;
     }
 
     /**
