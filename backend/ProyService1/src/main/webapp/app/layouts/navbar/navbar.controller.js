@@ -9,7 +9,7 @@
 
     function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
         var vm = this;
-
+        console.log('haber 3');
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
 
@@ -27,20 +27,25 @@
         function login() {
             collapseNavbar();
             LoginService.open();
+            console.log('haber alc ine'+vm.isNavbarCollapsed);
         }
 
         function logout() {
             collapseNavbar();
             Auth.logout();
             $state.go('home');
+            console.log('haber alc ine'+vm.isNavbarCollapsed);
         }
 
         function toggleNavbar() {
             vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
+            console.log('haber alc ine'+vm.isNavbarCollapsed);
         }
 
         function collapseNavbar() {
+
             vm.isNavbarCollapsed = true;
+            console.log('haber alc ine'+vm.isNavbarCollapsed);
         }
         Principal.identity().then(function(account) {
             vm.account = account;

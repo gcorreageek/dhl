@@ -8,6 +8,7 @@
     SettingsController.$inject = ['Principal', 'Auth', 'JhiLanguageService', '$translate'];
 
     function SettingsController (Principal, Auth, JhiLanguageService, $translate) {
+        console.log('pruebitaaa!');
         var vm = this;
 
         vm.error = null;

@@ -1,4 +1,4 @@
-<div ng-cloak>
+<div ng-cloak  ng-if="vm.account.login==null"  >
     <div class="row">
         <div class="col-md-4">
             <span class="hipster img-responsive img-rounded"></span>
@@ -34,7 +34,140 @@
             </ul>
 
             <p>
-             <span data-translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" data-translate="home.github">Github</a>!
+                <span data-translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" data-translate="home.github">Github</a>!
+            </p>
+        </div>
+    </div>
+</div>
+
+<div  style="padding-right: 110px;padding-left: 110px;" ng-if="vm.account.login!=null" >
+    <div class="row">
+        <div class="col-md-10">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">30&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="#">Product Name</a>
+                    </h4>
+                    <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    <p>Want to make these reviews work? Check out
+                        <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                        </strong>over at maxoffsky.com!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p class="lead">
+                <img src="/content/images/upload/image_profile_default.jpeg" alt="..." class="img-thumbnail">
+                <div class="caption-full">
+                <h4><a href="#">@gcorreageek</a>
+                </h4>
+                </div>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">30&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="#">Product Name</a>
+                    </h4>
+                    <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    <p>Want to make these reviews work? Check out
+                        <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                        </strong>over at maxoffsky.com!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p class="lead">
+                <img src="/content/images/upload/image_profile_default.jpeg" alt="..." class="img-thumbnail">
+            <div class="caption-full">
+                <h4><a href="#">@gcorreageek</a>
+                </h4>
+            </div>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">30&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="#">Product Name</a>
+                    </h4>
+                    <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    <p>Want to make these reviews work? Check out
+                        <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                        </strong>over at maxoffsky.com!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p class="lead">
+                <img src="/content/images/upload/image_profile_default.jpeg" alt="..." class="img-thumbnail">
+            <div class="caption-full">
+                <h4><a href="#">@gcorreageek</a>
+                </h4>
+            </div>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">30&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="#">Product Name</a>
+                    </h4>
+                    <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    <p>Want to make these reviews work? Check out
+                        <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                        </strong>over at maxoffsky.com!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p class="lead">
+                <img src="/content/images/upload/image_profile_default.jpeg" alt="..." class="img-thumbnail">
+            <div class="caption-full">
+                <h4><a href="#">@gcorreageek</a>
+                </h4>
+            </div>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">30&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="#">Product Name</a>
+                    </h4>
+                    <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                    <p>Want to make these reviews work? Check out
+                        <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                        </strong>over at maxoffsky.com!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p class="lead">
+                <img src="/content/images/upload/image_profile_default.jpeg" alt="..." class="img-thumbnail">
+            <div class="caption-full">
+                <h4><a href="#">@gcorreageek</a>
+                </h4>
+            </div>
             </p>
         </div>
     </div>

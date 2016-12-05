@@ -8,6 +8,7 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
+        console.log('pruebitaaa2!');
         $stateProvider.state('settings', {
             parent: 'account',
             url: '/settings',

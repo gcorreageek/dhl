@@ -9,7 +9,7 @@
 
     function HomeController ($scope, Principal, LoginService, $state) {
         var vm = this;
-
+        console.log('test 2');
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
