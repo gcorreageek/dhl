@@ -19,6 +19,8 @@ package com.dhl.proyclient1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
 
 public class ConfigActivity extends AppCompatActivity {
     @Override
@@ -28,6 +30,17 @@ public class ConfigActivity extends AppCompatActivity {
         Toolbar  toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("ConfigActivity","============>");
+            }
+        });
+
     }
 }
 /*public class ConfigActivity extends PreferenceActivity {

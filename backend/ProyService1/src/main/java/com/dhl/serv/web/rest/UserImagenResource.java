@@ -108,6 +108,14 @@ public class UserImagenResource {
         log.debug("REST request to get all UserImagens");
         return userImagenService.findAll();
     }
+    @RequestMapping(value = "/user-imagens-login",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<UserImagen> findByUserIsCurrentUser() {
+        log.debug("REST findByUserIsCurrentUser");
+        return userImagenService.findByUserIsCurrentUser();
+    }
 
     /**
      * GET  /user-imagens/:id : get the "id" userImagen.

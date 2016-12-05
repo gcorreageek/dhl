@@ -26,7 +26,7 @@ import java.util.Optional;
 public class UserPlusResource {
 
     private final Logger log = LoggerFactory.getLogger(UserPlusResource.class);
-        
+
     @Inject
     private UserPlusService userPlusService;
 
@@ -88,6 +88,14 @@ public class UserPlusResource {
     public List<UserPlus> getAllUserPluses() {
         log.debug("REST request to get all UserPluses");
         return userPlusService.findAll();
+    }
+    @RequestMapping(value = "/user-pluses/mobil/",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<UserPlus> getAllUserPlusesMobil() {
+        log.debug("REST request to get all UserPluses");
+        return userPlusService.findByUserIsCurrentUser();
     }
 
     /**

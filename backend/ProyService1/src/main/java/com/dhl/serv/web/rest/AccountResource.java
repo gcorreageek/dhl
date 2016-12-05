@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.*;
@@ -67,9 +68,16 @@ public class AccountResource {
             .orElseGet(() -> userRepository.findOneByEmail(managedUserVM.getEmail())
                 .map(user -> new ResponseEntity<>("e-mail address already in use", textPlainHeaders, HttpStatus.BAD_REQUEST))
                 .orElseGet(() -> {
-                    User user = userService.createUser(managedUserVM.getLogin(), managedUserVM.getPassword(),
-                    managedUserVM.getFirstName(), managedUserVM.getLastName(), managedUserVM.getEmail().toLowerCase(),
-                    managedUserVM.getLangKey());
+                    User user = null;
+                    try {
+                        user = userService.createUser(managedUserVM.getLogin(), managedUserVM.getPassword(),
+                        managedUserVM.getFirstName(), managedUserVM.getLastName(), managedUserVM.getEmail().toLowerCase(),
+                        managedUserVM.getLangKey());
+                    } catch (IOException e) {
+                        log.error("error ",e);
+                        return new ResponseEntity<>("error inesperado", textPlainHeaders, HttpStatus.BAD_REQUEST);
+                    }
+
                     String baseUrl = request.getScheme() + // "http"
                     "://" +                                // "://"
                     request.getServerName() +              // "myhost"
@@ -124,10 +132,15 @@ public class AccountResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<UserDTO> getAccount() {
-        return Optional.ofNullable(userService.getUserWithAuthorities())
-            .map(user -> new ResponseEntity<>(new UserDTO(user), HttpStatus.OK)  )
+        ResponseEntity<UserDTO>  responseEntity =  Optional.ofNullable(userService.getUserWithAuthorities()).map(user -> new ResponseEntity<>(new UserDTO(user,user.getUserPlus(),user.getUserHash(),user.getUserImagen()), HttpStatus.OK)  )
             .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
+        return responseEntity;
     }
+//    @RequestMapping(value = "/user-imagens-login",
+//        method = RequestMethod.GET,
+//        produces = MediaType.APPLICATION_JSON_VALUE)
+//    @Timed
+//    public List<UserImagen>
 
     /**
      * POST  /account : update the current user information.

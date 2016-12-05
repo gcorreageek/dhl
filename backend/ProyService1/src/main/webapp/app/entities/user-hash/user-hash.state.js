@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/user-hash',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_MOBILE'],
                 pageTitle: 'proyService1App.userHash.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/user-hash/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_MOBILE'],
                 pageTitle: 'proyService1App.userHash.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'user-hash-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'user-hash',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -119,7 +119,7 @@
             parent: 'user-hash',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -144,7 +144,7 @@
             parent: 'user-hash',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

@@ -25,6 +25,7 @@ public interface UserImagenService {
      *  @return the list of entities
      */
     List<UserImagen> findAll();
+    List<UserImagen> findByUserIsCurrentUser();
 
     /**
      *  Get the "id" userImagen.

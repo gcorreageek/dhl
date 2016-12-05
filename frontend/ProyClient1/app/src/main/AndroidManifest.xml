@@ -3,17 +3,19 @@
     package="com.dhl.proyclient1">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/dhl3novo"
         android:label="@string/dhl"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.AppLogin">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +24,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.AppLogin" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".DetailActivity"
             android:parentActivityName=".MainActivity"
@@ -86,6 +88,23 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".UploadActivity"
+            android:label="@string/title_activity_upload"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".RegisterUser"
+            android:icon="@drawable/ic_menu_send"
+            android:logo="@drawable/ic_menu"
+            android:theme="@style/AppTheme">
+
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity"   />
+
+
         </activity>
     </application>
 

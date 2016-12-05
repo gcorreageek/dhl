@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/user-plus',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_MOBILE'],
                 pageTitle: 'proyService1App.userPlus.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/user-plus/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_MOBILE'],
                 pageTitle: 'proyService1App.userPlus.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'user-plus-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             // UserPlusDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'UserPlus', 'User' ]
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
@@ -93,7 +93,7 @@
             parent: 'user-plus',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -135,7 +135,7 @@
             parent: 'user-plus',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -160,7 +160,7 @@
             parent: 'user-plus',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_MOBILE']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

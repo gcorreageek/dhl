@@ -19,10 +19,11 @@ public interface UserHashService {
 
     /**
      *  Get all the userHashes.
-     *  
+     *
      *  @return the list of entities
      */
     List<UserHash> findAll();
+    List<UserHash> findByUserIsCurrentUser();
 
     /**
      *  Get the "id" userHash.

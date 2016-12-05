@@ -23,6 +23,11 @@ public final class Constants {
 
     public static final String PATH_PROJECT = System.getProperty("user.dir");
     public static final String PATH_PROJECT_IMAGE_UPLOAD = System.getProperty("user.dir")+"/src/main/webapp/content/images/upload/";
+    public static final String PATH_PROJECT_IMAGE_USER_DEFAULT = System.getProperty("user.dir")+"/src/main/webapp/content/images/image_profile_default.jpeg";
+    public static final String PATH_PROJECT_IMAGE_USER_DEFAULT_NEW = System.getProperty("user.dir")+"/src/main/webapp/content/images/upload/image_profile_default.jpeg";
+//    public static final String IMAGE_PROFILE_DEFAULT = "image_profile_default.jpeg";
+//    public static final String PATH_PROJECT_IMAGE_USER_DEFAULT_NEW = System.getProperty("user.dir")+"/src/main/webapp/content/images/";
+    public static final String PATH_PROJECT_IMAGE_UPLOAD_WEB = "/content/images/upload/";
 
     private Constants() {
     }

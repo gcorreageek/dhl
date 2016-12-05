@@ -1,9 +1,12 @@
 package com.dhl.proyclient1;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -27,10 +30,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import util.Constants;
+
 public class MainActivity extends AppCompatActivity   {
 
     private DrawerLayout mDrawerLayout;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,21 @@ public class MainActivity extends AppCompatActivity   {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        toolbar.setTitle("gusta");
+        toolbar.setNavigationIcon(getDrawable(R.drawable.ic_action_name));
+
+//        Drawable dra = (Drawable) findViewById(R.drawable.ic_favorite);
+
+
+
+//
+
+
+//        icon_faaaa
+        //If u want to apply any other properties ex.
+        // getting action bar for furter operations
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -107,7 +128,16 @@ public class MainActivity extends AppCompatActivity   {
                     context.startActivity(intent);
                 }else if(id==R.id.nav_close){
                     Log.i("MainActivity","nav_close!!");
+
                     Context context = MainActivity.this;
+
+                    SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.remove(Constants.TOKEN);
+                    editor.commit();
+
+
+
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);
                 }else if(id==R.id.nav_config){

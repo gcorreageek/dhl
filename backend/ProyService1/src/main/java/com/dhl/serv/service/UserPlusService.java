@@ -19,10 +19,11 @@ public interface UserPlusService {
 
     /**
      *  Get all the userPluses.
-     *  
+     *
      *  @return the list of entities
      */
     List<UserPlus> findAll();
+    List<UserPlus> findByUserIsCurrentUser();
 
     /**
      *  Get the "id" userPlus.

@@ -42,5 +42,8 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+        Principal.identity().then(function(account) {
+            vm.account = account;
+        });
     }
 })();

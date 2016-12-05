@@ -19,7 +19,7 @@ import java.util.List;
 public class UserPlusServiceImpl implements UserPlusService{
 
     private final Logger log = LoggerFactory.getLogger(UserPlusServiceImpl.class);
-    
+
     @Inject
     private UserPlusRepository userPlusRepository;
 
@@ -37,13 +37,20 @@ public class UserPlusServiceImpl implements UserPlusService{
 
     /**
      *  Get all the userPluses.
-     *  
+     *
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<UserPlus> findAll() {
         log.debug("Request to get all UserPluses");
         List<UserPlus> result = userPlusRepository.findAll();
+
+        return result;
+    }
+    @Transactional(readOnly = true)
+    public List<UserPlus> findByUserIsCurrentUser() {
+        log.debug("Request to get all UserPluses");
+        List<UserPlus> result = userPlusRepository.findByUserIsCurrentUser();
 
         return result;
     }
@@ -54,7 +61,7 @@ public class UserPlusServiceImpl implements UserPlusService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public UserPlus findOne(Long id) {
         log.debug("Request to get UserPlus : {}", id);
         UserPlus userPlus = userPlusRepository.findOne(id);

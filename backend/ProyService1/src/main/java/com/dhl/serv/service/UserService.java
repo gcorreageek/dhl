@@ -1,7 +1,6 @@
 package com.dhl.serv.service;
 
-import com.dhl.serv.domain.Authority;
-import com.dhl.serv.domain.User;
+import com.dhl.serv.domain.*;
 import com.dhl.serv.repository.AuthorityRepository;
 import com.dhl.serv.repository.UserRepository;
 import com.dhl.serv.security.AuthoritiesConstants;
@@ -15,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.time.ZonedDateTime;
 import javax.inject.Inject;
 import java.util.*;
@@ -33,6 +33,13 @@ public class UserService {
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private UserPlusService userPlusService;
+    @Inject
+    private UserImagenService userImagenService;
+    @Inject
+    private UserHashService userHashService;
 
     @Inject
     private AuthorityRepository authorityRepository;
@@ -78,8 +85,9 @@ public class UserService {
             });
     }
 
+    @Transactional
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String langKey) {
+        String langKey) throws IOException {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.MOBILE);
@@ -98,7 +106,37 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
-        userRepository.save(newUser);
+        newUser = userRepository.save(newUser);
+
+        UserPlus userPlus = new UserPlus();
+        userPlus.setCountry("Brasil");
+        userPlus.setLanguaje(newUser.getLangKey());
+        userPlus.setUser(newUser);
+        userPlusService.save(userPlus);
+
+
+        UserImagen userImagen = new UserImagen();
+
+        userImagen.setUser(newUser);
+        userImagen.setUserImagenMain(true);
+        userImagen.setUserImagenName("main_"+newUser.getLogin());
+        userImagen.setUserImagenPath("path_pc");
+        userImagen.setUserImagenPathImage("url_web");
+        userImagenService.save(userImagen);
+
+
+        UserHash userHash1 = new UserHash();
+        userHash1.setUser(newUser);
+        userHash1.setHash(new Hash(1));
+        userHashService.save(userHash1);
+
+        UserHash userHash2 = new UserHash();
+        userHash2.setUser(newUser);
+        userHash2.setHash(new Hash(2));
+        userHashService.save(userHash2);
+
+
+
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
@@ -199,10 +237,35 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin());
         User user = null;
         if (optionalUser.isPresent()) {
-          user = optionalUser.get();
+            user = optionalUser.get();
             user.getAuthorities().size(); // eagerly load the association
-         }
-         return user;
+
+            UserPlus userPlus = null;
+            UserImagen userImagen = null;
+            List<UserHash> userHash = null;
+            List<UserPlus> byUserIsCurrentUser = userPlusService.findByUserIsCurrentUser();
+            if(byUserIsCurrentUser!=null && !byUserIsCurrentUser.isEmpty()){
+                userPlus = byUserIsCurrentUser.get(0);
+            }
+            List<UserImagen> byUserIsCurrentUser1 = userImagenService.findByUserIsCurrentUser();
+            if(byUserIsCurrentUser1!=null &&  !byUserIsCurrentUser1.isEmpty()){
+                userImagen = byUserIsCurrentUser1.get(0);
+            }
+            List<UserHash> byUserIsCurrentUser2 = userHashService.findByUserIsCurrentUser();
+            if(byUserIsCurrentUser2!=null && !byUserIsCurrentUser2.isEmpty()){
+                userHash = byUserIsCurrentUser2;
+            }
+
+
+            user.setUserPlus(userPlus);
+            user.setUserImagen(userImagen);
+            user.setUserHash(userHash);
+        }
+
+
+
+
+        return user;
     }
 
 

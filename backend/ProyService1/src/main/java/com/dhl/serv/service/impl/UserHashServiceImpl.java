@@ -19,7 +19,7 @@ import java.util.List;
 public class UserHashServiceImpl implements UserHashService{
 
     private final Logger log = LoggerFactory.getLogger(UserHashServiceImpl.class);
-    
+
     @Inject
     private UserHashRepository userHashRepository;
 
@@ -37,13 +37,20 @@ public class UserHashServiceImpl implements UserHashService{
 
     /**
      *  Get all the userHashes.
-     *  
+     *
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<UserHash> findAll() {
         log.debug("Request to get all UserHashes");
         List<UserHash> result = userHashRepository.findAll();
+
+        return result;
+    }
+    @Transactional(readOnly = true)
+    public List<UserHash> findByUserIsCurrentUser() {
+        log.debug("Request to get all UserHashes");
+        List<UserHash> result = userHashRepository.findByUserIsCurrentUser();
 
         return result;
     }
@@ -54,7 +61,7 @@ public class UserHashServiceImpl implements UserHashService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public UserHash findOne(Long id) {
         log.debug("Request to get UserHash : {}", id);
         UserHash userHash = userHashRepository.findOne(id);

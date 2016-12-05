@@ -11,6 +11,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.time.ZonedDateTime;
@@ -80,6 +81,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
     private Set<Authority> authorities = new HashSet<>();
+
+
+    @Transient
+    private UserPlus userPlus;
+    @Transient
+    private List<UserHash> userHash;
+    @Transient
+    private UserImagen userImagen;
 
     public Long getId() {
         return id;
@@ -212,5 +221,35 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", langKey='" + langKey + '\'' +
             ", activationKey='" + activationKey + '\'' +
             "}";
+    }
+
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public UserPlus getUserPlus() {
+        return userPlus;
+    }
+
+    public void setUserPlus(UserPlus userPlus) {
+        this.userPlus = userPlus;
+    }
+
+
+    public List<UserHash> getUserHash() {
+        return userHash;
+    }
+
+    public void setUserHash(List<UserHash> userHash) {
+        this.userHash = userHash;
+    }
+
+    public UserImagen getUserImagen() {
+        return userImagen;
+    }
+
+    public void setUserImagen(UserImagen userImagen) {
+        this.userImagen = userImagen;
     }
 }

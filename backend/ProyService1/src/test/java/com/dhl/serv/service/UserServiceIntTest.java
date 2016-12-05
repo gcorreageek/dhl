@@ -3,6 +3,8 @@ package com.dhl.serv.service;
 import com.dhl.serv.ProyService1App;
 import com.dhl.serv.domain.User;
 import com.dhl.serv.repository.UserRepository;
+
+import java.io.IOException;
 import java.time.ZonedDateTime;
 import com.dhl.serv.service.util.RandomUtil;
 import java.time.LocalDate;
@@ -49,7 +51,12 @@ public class UserServiceIntTest {
 
     @Test
     public void assertThatOnlyActivatedUserCanRequestPasswordReset() {
-        User user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        User user = null;
+        try {
+            user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Optional<User> maybeUser = userService.requestPasswordReset("john.doe@localhost");
         assertThat(maybeUser.isPresent()).isFalse();
         userRepository.delete(user);
@@ -57,7 +64,12 @@ public class UserServiceIntTest {
 
     @Test
     public void assertThatResetKeyMustNotBeOlderThan24Hours() {
-        User user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        User user = null;
+        try {
+            user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ZonedDateTime daysAgo = ZonedDateTime.now().minusHours(25);
         String resetKey = RandomUtil.generateResetKey();
@@ -76,7 +88,12 @@ public class UserServiceIntTest {
 
     @Test
     public void assertThatResetKeyMustBeValid() {
-        User user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        User user = null;
+        try {
+            user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ZonedDateTime daysAgo = ZonedDateTime.now().minusHours(25);
         user.setActivated(true);
@@ -90,7 +107,12 @@ public class UserServiceIntTest {
 
     @Test
     public void assertThatUserCanResetPassword() {
-        User user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        User user = null;
+        try {
+            user = userService.createUser("johndoe", "johndoe", "John", "Doe", "john.doe@localhost", "en-US");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String oldPassword = user.getPassword();
         ZonedDateTime daysAgo = ZonedDateTime.now().minusHours(2);
         String resetKey = RandomUtil.generateResetKey();

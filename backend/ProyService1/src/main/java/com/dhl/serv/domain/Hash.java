@@ -38,6 +38,10 @@ public class Hash implements Serializable {
     @ManyToOne
     private User user;
 
+    public Hash(Integer id) {
+        this.id = new Long(id);
+    }
+
     public Long getId() {
         return id;
     }
@@ -113,5 +117,9 @@ public class Hash implements Serializable {
             ", hashName='" + hashName + "'" +
             ", hashType='" + hashType + "'" +
             '}';
+    }
+
+
+    public Hash() {
     }
 }
