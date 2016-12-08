@@ -1,66 +1,220 @@
-<div>
-    <h2 data-translate="proyService1App.userImagen.home.title">User Imagens</h2>
-    <jhi-alert></jhi-alert>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="user-imagen.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="proyService1App.userImagen.home.createLabel">
-                        Create new User Imagen
-                    </span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="proyService1App.userImagen.userImagenName">User Imagen Name</span></th>
-                    <th><span data-translate="proyService1App.userImagen.userImagenPath">User Imagen Path</span></th>
-                    <th ng-hide="true" ><span data-translate="proyService1App.userImagen.userImagenPathImage">User Imagen Path Image</span></th>
-                    <th><span data-translate="proyService1App.userImagen.userImagenMain">User Imagen Main</span></th>
-                    <th><span data-translate="proyService1App.userImagen.user">User</span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="userImagen in vm.userImagens track by userImagen.id">
-                    <td><a ui-sref="user-imagen-detail({id:userImagen.id})">{{userImagen.id}}</a></td>
-                    <td>{{userImagen.userImagenName}}</td>
-                    <td>{{userImagen.userImagenPath}}</td>
-                    <td ng-hide="true" >{{userImagen.userImagenPathImage}}</td>
-                    <td>{{userImagen.userImagenMain}}</td>
-                    <td>
-                        {{userImagen.user.login}}
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="user-imagen-detail({id:userImagen.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="user-imagen.edit({id:userImagen.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="user-imagen.delete({id:userImagen.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<!-- Page Content -->
+<div class="col-md-3 navbar-fixed-top" style="margin-top: 90px;padding-left: 90px;" >
+    <p class="lead">
+        <img src="{{vm.account.userImagen.userImagenPathImage}}" alt="..." class="img-thumbnail">
+        @{{vm.account.login}}
+        <button class="btn btn-primary" ui-sref="user-imagen.new" >
+            <span class="glyphicon glyphicon-plus"></span>
+            Create new Article
+        </button>
+    </p>
+    <div class="list-group">
+        <a  href="javascript:;" ng-click="vm.showTimeline();" class="list-group-item {{vm.viewTimeline?'active':''}}">Timeline</a>
+        <a  href="javascript:;" ng-click="vm.showInfo();" class="list-group-item {{vm.viewInfo?'active':''}}">Informacion</a>
+        <a  href="javascript:;" ng-click="vm.showHash();" class="list-group-item {{vm.viewHash?'active':''}}">Hash</a>
+        <a href="javascript:;" ng-click="vm.showFriends();" class="list-group-item {{vm.viewFriends?'active':''}}">Friends</a>
     </div>
 </div>
+<div ng-if="vm.viewInfo" style="padding-left: 300px;"  >
+
+    <div class="row">
+        <div class="col-md-12">
+            <form name="editForm" role="form"  novalidate ng-submit="vm.savePlus()">
+            <div class="form-group">
+                <label class="control-label"  for="field_weigh">Weigh</label>
+                <input type="text" class="form-control" name="weigh" id="field_weigh"
+                       ng-model="vm.account.userPlus.weigh"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_height">Height</label>
+                <input type="text" class="form-control" name="height" id="field_height"
+                       ng-model="vm.account.userPlus.height"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="field_birthday">Birthday</label>
+                <div class="input-group">
+                    <input id="field_birthday" type="text" class="form-control" name="birthday" datetime-picker="{{dateformat}}" ng-model="vm.account.userPlus.birthday" is-open="vm.datePickerOpenStatus.birthday"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="field_sex">Sex</label>
+                <select class="form-control" id="field_sex" name="sex" ng-model="vm.account.userPlus.sex" >
+                    <option value=""></option>
+                    <!--<option value="male">{{ 'proyService1App.userPlus.sexes.male' | translate }}</option>-->
+                    <!--<option value="female">{{ 'proyService1App.userPlus.sexes.female' | translate }}</option>-->
+                    <option value="male">Masculino</option>
+                    <option value="female">Femenino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_country">Country</label>
+                <select class="form-control" id="field_country" name="country" ng-model="vm.account.userPlus.country" >
+                    <option value=""></option>
+                    <!--<option value="peru">{{ 'proyService1App.userPlus.countries.peru' | translate }}</option>-->
+                    <!--<option value="brazil">{{ 'proyService1App.userPlus.countries.brazil' | translate }}</option>-->
+                    <!--<option value="china">{{ 'proyService1App.userPlus.countries.china' | translate }}</option>-->
+                    <!--<option value="usa">{{ 'proyService1App.userPlus.countries.usa' | translate }}</option>-->
+                    <option value="peru">Peru</option>
+                    <option value="brazil">Brasil</option>
+                    <option value="china">China</option>
+                    <option value="usa">USA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="field_languaje">Languaje</label>
+                <select class="form-control" id="field_languaje" name="languaje" ng-model="vm.account.userPlus.languaje" >
+                    <option value=""></option>
+                    <option value="spanish">Spanish</option>
+                    <option value="portuguese">Portugues</option>
+                    <option value="english">English</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  for="field_disabledProfile">Disabled Profile</label>
+                <input type="checkbox" class="form-control" name="disabledProfile" id="field_disabledProfile"
+                       ng-model="vm.account.userPlus.disabledProfile"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_showWeigh">Show Weigh</label>
+                <input type="checkbox" class="form-control" name="showWeigh" id="field_showWeigh"
+                       ng-model="vm.account.userPlus.showWeigh"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="field_showHeight">Show Height</label>
+                <input type="checkbox" class="form-control" name="showHeight" id="field_showHeight"
+                       ng-model="vm.account.userPlus.showHeight"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="field_showBirthday">Show Birthday</label>
+                <input type="checkbox" class="form-control" name="showBirthday" id="field_showBirthday"
+                       ng-model="vm.account.userPlus.showBirthday"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="field_showSex">Show Sex</label>
+                <input type="checkbox" class="form-control" name="showSex" id="field_showSex"
+                       ng-model="vm.account.userPlus.showSex"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_showCountry">Show Country</label>
+                <input type="checkbox" class="form-control" name="showCountry" id="field_showCountry"
+                       ng-model="vm.account.userPlus.showCountry"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_showLanguaje">Show Languaje</label>
+                <input type="checkbox" class="form-control" name="showLanguaje" id="field_showLanguaje"
+                       ng-model="vm.account.userPlus.showLanguaje"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_notificationNews">Notification News</label>
+                <input type="checkbox" class="form-control" name="notificationNews" id="field_notificationNews"
+                       ng-model="vm.account.userPlus.notificationNews"
+                />
+            </div>
+            <div class="form-group">
+                <label class="control-label"   for="field_options">Options</label>
+                <input type="text" class="form-control" name="options" id="field_options"
+                       ng-model="vm.account.userPlus.options"
+                />
+            </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">-->
+                        <!--<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>-->
+                    <!--</button>-->
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+
+
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+<div ng-if="vm.viewHash" style="padding-left: 300px;margin-bottom: 40px;"  >
+    <form name="editForm" role="form"  novalidate >
+    <div class="row">
+        <div class="col-md-6">
+
+            <label  for="field_userImagen1">Hash</label>&nbsp;&nbsp;
+            <button class="btn btn-primary" ng-click="vm.plus();"    >
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <select class="form-control" style="height: 420px;" id="field_userImagen" multiple name="userImagen" ng-model="vm.hisHash" ng-options="hash.hashType+'-'+hash.hashName for hash in vm.hashs track by hash.id">
+            </select>
+
+        </div>
+        <div class="col-md-6">
+            <label  for="field_userImagen1">Mis Hash</label>&nbsp;&nbsp;
+            <button class="btn btn-primary" ng-click="vm.minus();"    >
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+            <select class="form-control" style="height: 420px;" id="field_userImagen1" multiple name="userImagen" ng-model="vm.myHash" ng-options="hash.hash.hashType+'-'+hash.hash.hashName for hash in vm.account.userHash track by hash.hash.id">
+            </select>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <div class="modal-footer">
+            <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary"  ng-click="vm.saveHash()">
+                <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+            </button>
+        </div>
+        </div>
+    </div>
+    </form>
+
+
+
+</div>
+<div ng-if="vm.viewFriends" style="padding-left: 300px;"  >
+    <form method="POST" enctype="multipart/form-data" action="/api/user-imagens/upload">
+        <table>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr  ng-show="false"  ><td>File to upload:</td><td><input type="text"  name="login" ng-value="vm.account.login"  /></td></tr>
+            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div   ng-if="vm.viewTimeline" style="padding-left: 300px;"  >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail" ng-repeat="article in vm.articles   | orderBy: '-id'"   >
+                <img class="img-responsive" src="{{article.userImagen.userImagenPathImage}}" alt="">
+                <div class="caption-full">
+                    <h4 class="pull-right">{{article.articleReactions.length}}&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h4>
+                    <h4><a href="javascript:;">{{article.articleName}}</a>
+                        <span style="font-size: 12px;"  ng-repeat="hash in article.articleHashes" >{{hash.hash.hashType}}-{{hash.hash.hashName}}&nbsp;</span>
+                    </h4>
+                    <!--<p>{{article.articleDescription}}</p>-->
+                    <textarea style="width: 780px;"  readonly >{{article.articleDescription}}</textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.container -->

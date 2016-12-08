@@ -1,6 +1,7 @@
 package com.dhl.serv.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -39,6 +40,10 @@ public class UserImagen implements Serializable {
 
     @ManyToOne
     private User user;
+
+
+    @Transient
+    MultipartFile multipartFile;
 
     public Long getId() {
         return id;
@@ -125,5 +130,13 @@ public class UserImagen implements Serializable {
             ", userImagenPathImage='" + userImagenPathImage + "'" +
             ", userImagenMain='" + userImagenMain + "'" +
             '}';
+    }
+
+    public MultipartFile getMultipartFile() {
+        return multipartFile;
+    }
+
+    public void setMultipartFile(MultipartFile multipartFile) {
+        this.multipartFile = multipartFile;
     }
 }

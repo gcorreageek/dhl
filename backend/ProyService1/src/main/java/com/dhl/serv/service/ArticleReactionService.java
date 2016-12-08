@@ -19,10 +19,11 @@ public interface ArticleReactionService {
 
     /**
      *  Get all the articleReactions.
-     *  
+     *
      *  @return the list of entities
      */
     List<ArticleReaction> findAll();
+    List<ArticleReaction> findByArticleId(Long id);
 
     /**
      *  Get the "id" articleReaction.

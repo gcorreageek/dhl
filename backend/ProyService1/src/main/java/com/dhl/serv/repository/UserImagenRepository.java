@@ -15,4 +15,6 @@ public interface UserImagenRepository extends JpaRepository<UserImagen,Long> {
     @Query("select userImagen from UserImagen userImagen where userImagen.user.login = ?#{principal.username}")
     List<UserImagen> findByUserIsCurrentUser();
 
+    List<UserImagen> findByUserIdAndUserImagenMain(Long idUser,Boolean main);
+
 }

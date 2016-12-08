@@ -1,47 +1,28 @@
-
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
-
+<form name="editForm" role="form"  novalidate ng-submit="vm.save()">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myUserImagenLabel" data-translate="proyService1App.userImagen.home.createOrEditLabel">Create or edit a User Imagen</h4>
+        <h4 class="modal-title" id="myUserImagenLabel"  >Create</h4>
     </div>
+
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.userImagen.id">
-            <label for="id" data-translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.userImagen.id" readonly />
+        <div class="form-group">
+            <label class="control-label"   for="field_userImagenPathImage">Image</label>
+            <input type="file" class="form-control" name="userImagenPathImage" id="field_userImagenPathImage" ng-model="vm.article.userImagen.userImagenPathImage" base-sixty-four-input />
+            <img alt="Embedded Image" class="img-responsive" src="data:image/png;base64,{{vm.article.userImagen.userImagenPathImage.base64}}" />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="proyService1App.userImagen.userImagenName" for="field_userImagenName">User Imagen Name</label>
-            <input type="text" class="form-control" name="userImagenName" id="field_userImagenName"
-                    ng-model="vm.userImagen.userImagenName"
-                     />
+            <label class="control-label"  for="field_articleName">Name</label>
+            <input type="text" class="form-control" name="articleName" id="field_articleName" ng-model="vm.article.articleName" />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="proyService1App.userImagen.userImagenPath" for="field_userImagenPath">User Imagen Path</label>
-            <input type="text" class="form-control" name="userImagenPath" id="field_userImagenPath"
-                    ng-model="vm.userImagen.userImagenPath"
-                     />
+            <label class="control-label"  for="field_articleDescription">Description</label>
+            <input type="text" class="form-control" name="articleDescription" id="field_articleDescription" ng-model="vm.article.articleDescription" />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="proyService1App.userImagen.userImagenPathImage" for="field_userImagenPathImage">User Imagen Path Image</label>
-            <input type="text" class="form-control" name="userImagenPathImage" id="field_userImagenPathImage"
-                    ng-model="vm.userImagen.userImagenPathImage"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="proyService1App.userImagen.userImagenMain" for="field_userImagenMain">User Imagen Main</label>
-            <input type="checkbox" class="form-control" name="userImagenMain" id="field_userImagenMain"
-                    ng-model="vm.userImagen.userImagenMain"
-                     />
-        </div>
-
-        <div class="form-group">
-            <label data-translate="proyService1App.userImagen.user" for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user" ng-model="vm.userImagen.user" ng-options="user as user.login for user in vm.users track by user.id">
-                <option value=""></option>
+            <label  for="field_userImagen">Hash</label>
+            <select class="form-control" id="field_userImagen" multiple name="userImagen" ng-model="vm.hashsSelected" ng-options="hash.hashType+'-'+hash.hashName for hash in vm.hashs track by hash.id">
             </select>
         </div>
     </div>

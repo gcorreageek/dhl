@@ -5,9 +5,9 @@
         .module('proyService1App')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance'];
+    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance','Base64'];
 
-    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance) {
+    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance,Base64) {
         var vm = this;
 
         vm.authenticationError = false;
@@ -33,6 +33,7 @@
         }
 
         function login (event) {
+            console.log('entro a login');
             event.preventDefault();
             Auth.login({
                 username: vm.username,

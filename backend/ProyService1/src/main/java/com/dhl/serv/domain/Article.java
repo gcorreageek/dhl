@@ -1,13 +1,12 @@
 package com.dhl.serv.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * A Article.
@@ -34,16 +33,27 @@ public class Article implements Serializable {
     @ManyToOne
     private UserImagen userImagen;
 
-    @OneToMany(mappedBy = "article")
-    @JsonIgnore
-    private Set<ArticleHash> articleHashes = new HashSet<>();
+    @OneToMany(mappedBy = "article" , cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @JsonIgnoreProperties({"article"})
+    private Set<ArticleHash> articleHashes = new HashSet<ArticleHash>();
+
+//    @OneToMany(mappedBy = "article" )
+//    private List<Hash> hashs;
 
     @OneToMany(mappedBy = "article")
-    @JsonIgnore
-    private Set<ArticleReaction> articleReactions = new HashSet<>();
+    @JsonIgnoreProperties({"article"})
+    private List<ArticleReaction> articleReactions = new ArrayList<>();
 
     @ManyToOne
     private User user;
+
+
+
+//    @JsonIgnoreProperties({"user"})
+//    @OneToMany
+//    private List<UserHash> userHash;
+
+
 
     public Long getId() {
         return id;
@@ -85,21 +95,7 @@ public class Article implements Serializable {
         this.userImagen = userImagen;
     }
 
-    public Set<ArticleHash> getArticleHashes() {
-        return articleHashes;
-    }
 
-    public void setArticleHashes(Set<ArticleHash> articleHashes) {
-        this.articleHashes = articleHashes;
-    }
-
-    public Set<ArticleReaction> getArticleReactions() {
-        return articleReactions;
-    }
-
-    public void setArticleReactions(Set<ArticleReaction> articleReactions) {
-        this.articleReactions = articleReactions;
-    }
 
     public User getUser() {
         return user;
@@ -108,6 +104,40 @@ public class Article implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+//    public List<ArticleHash> getArticleHashes() {
+//        return articleHashes;
+//    }
+//
+//    public void setArticleHashes(List<ArticleHash> articleHashes) {
+//        this.articleHashes = articleHashes;
+//    }
+
+
+    public Set<ArticleHash> getArticleHashes() {
+        return articleHashes;
+    }
+
+    public void setArticleHashes(Set<ArticleHash> articleHashes) {
+        this.articleHashes = articleHashes;
+    }
+
+    public List<ArticleReaction> getArticleReactions() {
+        return articleReactions;
+    }
+
+    public void setArticleReactions(List<ArticleReaction> articleReactions) {
+        this.articleReactions = articleReactions;
+    }
+
+
+//    public List<Hash> getHashs() {
+//        return hashs;
+//    }
+//
+//    public void setHashs(List<Hash> hashs) {
+//        this.hashs = hashs;
+//    }
 
     @Override
     public boolean equals(Object o) {

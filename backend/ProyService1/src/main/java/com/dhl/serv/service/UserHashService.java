@@ -16,6 +16,7 @@ public interface UserHashService {
      * @return the persisted entity
      */
     UserHash save(UserHash userHash);
+    UserHash save(List<UserHash> userHash);
 
     /**
      *  Get all the userHashes.

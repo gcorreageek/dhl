@@ -15,4 +15,7 @@ public interface ArticleReactionRepository extends JpaRepository<ArticleReaction
     @Query("select articleReaction from ArticleReaction articleReaction where articleReaction.user.login = ?#{principal.username}")
     List<ArticleReaction> findByUserIsCurrentUser();
 
+//    @Query("select articleReaction from ArticleReaction articleReaction where articleReaction.user.login = ?#{principal.username}")
+    List<ArticleReaction> findByArticleId(Long id);
+
 }

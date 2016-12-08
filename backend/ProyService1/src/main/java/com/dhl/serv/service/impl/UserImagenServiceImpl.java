@@ -1,9 +1,12 @@
 package com.dhl.serv.service.impl;
 
 import com.dhl.serv.config.Constants;
+import com.dhl.serv.domain.User;
+import com.dhl.serv.security.SecurityUtils;
 import com.dhl.serv.service.UserImagenService;
 import com.dhl.serv.domain.UserImagen;
 import com.dhl.serv.repository.UserImagenRepository;
+import com.dhl.serv.service.UserService;
 import com.dhl.serv.service.util.ImagesUtil;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -29,6 +32,9 @@ public class UserImagenServiceImpl implements UserImagenService{
     @Inject
     private UserImagenRepository userImagenRepository;
 
+    @Inject
+    UserService userService;
+
     /**
      * Save a userImagen.
      *
@@ -37,9 +43,22 @@ public class UserImagenServiceImpl implements UserImagenService{
      */
     public UserImagen save(UserImagen userImagen) throws IOException {
         log.debug("Request to save UserImagen : {}", userImagen);
+
+        String imagenBase64 = null;
+
+
+        if(!userImagen.isUserImagenMain()){
+            if(userImagen.getUserImagenPathImage()!=null && !userImagen.getUserImagenPathImage().equals("")){
+                imagenBase64 = userImagen.getUserImagenPathImage();
+                userImagen.setUserImagenPathImage(null);
+            }
+        }
+
+
+
         UserImagen result = userImagenRepository.save(userImagen);
 
-        if(result.getUserImagenPathImage().equals("url_web")){
+        if(result.getUserImagenPathImage()!=null && result.getUserImagenPathImage().equals("url_web")){
 
             String path_pc = PATH_PROJECT_IMAGE_UPLOAD+result.getId()+".jpeg";
             String url_web = new StringBuilder().append(PATH_PROJECT_IMAGE_UPLOAD_WEB).append(result.getId()).append(".jpeg").toString();
@@ -66,11 +85,28 @@ public class UserImagenServiceImpl implements UserImagenService{
             result.setUserImagenPathImage(url_web);
 
         }else{
-            byte[] imageByteArray = ImagesUtil.decodeImage(result.getUserImagenPathImage());
+//            byte[] buffer = new byte[initialStream.available()];
+//            initialStream.read(buffer);
+//
+//            String name = result.getUserImagenName();
+//            String ext = name.substring(name.lastIndexOf("."));
+//            String url_web = new StringBuilder().append(PATH_PROJECT_IMAGE_UPLOAD_WEB).append(result.getId()).append(ext).toString();
+//            String path= PATH_PROJECT_IMAGE_UPLOAD+result.getId()+ext;
+//            result.setUserImagenMain(false);
+//            result.setUserImagenPathImage(url_web);
+//            result.setUserImagenPath(path);
+//
+//            File targetFile = new File(path);
+//            OutputStream outStream = new FileOutputStream(targetFile);
+//            outStream.write(buffer);
+
             OutputStream out = null;
             try {
-                String path_pc = PATH_PROJECT_IMAGE_UPLOAD+result.getId()+".png";
-                String url_web = new StringBuilder().append(PATH_PROJECT_IMAGE_UPLOAD_WEB).append(result.getId()).append(".png").toString();
+                byte[] imageByteArray = ImagesUtil.decodeImage(imagenBase64);
+                String name = result.getUserImagenName();
+                String ext = name.substring(name.lastIndexOf("."));
+                String path_pc = PATH_PROJECT_IMAGE_UPLOAD+result.getId()+ext;
+                String url_web = new StringBuilder().append(PATH_PROJECT_IMAGE_UPLOAD_WEB).append(result.getId()).append(ext).toString();
                 result.setUserImagenPath(path_pc);
                 result.setUserImagenPathImage(url_web);
 
@@ -103,6 +139,16 @@ public class UserImagenServiceImpl implements UserImagenService{
         List<UserImagen> result = userImagenRepository.findByUserIsCurrentUser();
 
         return result;
+    }
+
+    @Transactional(readOnly = true)
+    public UserImagen findByUserIdAndUserImagenMain(Long idUser,Boolean main){
+        log.debug("Request to get all UserImagens");
+        List<UserImagen> result = userImagenRepository.findByUserIdAndUserImagenMain(idUser,main);
+        if(result!=null && !result.isEmpty()){
+            return result.get(0);
+        }
+        return null;
     }
 
     /**

@@ -19,7 +19,7 @@ import java.util.List;
 public class ArticleHashServiceImpl implements ArticleHashService{
 
     private final Logger log = LoggerFactory.getLogger(ArticleHashServiceImpl.class);
-    
+
     @Inject
     private ArticleHashRepository articleHashRepository;
 
@@ -37,10 +37,10 @@ public class ArticleHashServiceImpl implements ArticleHashService{
 
     /**
      *  Get all the articleHashes.
-     *  
+     *
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<ArticleHash> findAll() {
         log.debug("Request to get all ArticleHashes");
         List<ArticleHash> result = articleHashRepository.findAll();
@@ -54,7 +54,7 @@ public class ArticleHashServiceImpl implements ArticleHashService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public ArticleHash findOne(Long id) {
         log.debug("Request to get ArticleHash : {}", id);
         ArticleHash articleHash = articleHashRepository.findOne(id);

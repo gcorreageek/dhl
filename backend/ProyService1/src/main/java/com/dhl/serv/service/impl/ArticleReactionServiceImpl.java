@@ -19,7 +19,7 @@ import java.util.List;
 public class ArticleReactionServiceImpl implements ArticleReactionService{
 
     private final Logger log = LoggerFactory.getLogger(ArticleReactionServiceImpl.class);
-    
+
     @Inject
     private ArticleReactionRepository articleReactionRepository;
 
@@ -37,10 +37,10 @@ public class ArticleReactionServiceImpl implements ArticleReactionService{
 
     /**
      *  Get all the articleReactions.
-     *  
+     *
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<ArticleReaction> findAll() {
         log.debug("Request to get all ArticleReactions");
         List<ArticleReaction> result = articleReactionRepository.findAll();
@@ -54,11 +54,15 @@ public class ArticleReactionServiceImpl implements ArticleReactionService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public ArticleReaction findOne(Long id) {
         log.debug("Request to get ArticleReaction : {}", id);
         ArticleReaction articleReaction = articleReactionRepository.findOne(id);
         return articleReaction;
+    }
+    @Transactional(readOnly = true)
+    public List<ArticleReaction> findByArticleId(Long id){
+        return articleReactionRepository.findByArticleId(id);
     }
 
     /**

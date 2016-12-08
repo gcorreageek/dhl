@@ -1,8 +1,10 @@
 package com.dhl.serv.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.dhl.serv.domain.User;
 import com.dhl.serv.domain.UserImagen;
 import com.dhl.serv.service.UserImagenService;
+import com.dhl.serv.service.UserService;
 import com.dhl.serv.web.rest.util.HeaderUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
@@ -13,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +39,8 @@ public class UserImagenResource {
 
     @Inject
     private UserImagenService userImagenService;
+    @Inject
+    UserService userService;
 
     /**
      * POST  /user-imagens : Create a new userImagen.
@@ -137,6 +143,8 @@ public class UserImagenResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+
+
     /**
      * DELETE  /user-imagens/:id : delete the "id" userImagen.
      *
@@ -151,6 +159,31 @@ public class UserImagenResource {
         log.debug("REST request to delete UserImagen : {}", id);
         userImagenService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("userImagen", id.toString())).build();
+    }
+
+    @RequestMapping(value = "/user-imagens/upload", method = RequestMethod.POST)
+    public ResponseEntity<UserImagen> handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("login") String login) {
+        log.info("" + login);
+        log.info("" + file.getOriginalFilename());
+        UserImagen saveImagen = new UserImagen();
+        try {
+            User user = userService.getUserWithAuthoritiesByLogin(login).get();
+            saveImagen.setMultipartFile(file);
+            saveImagen.setUserImagenPathImage("url_web2");
+            saveImagen.setUserImagenPathImage("url_web2");
+            saveImagen.setUserImagenName(file.getOriginalFilename());
+            saveImagen.setUser(user);
+            saveImagen = userImagenService.save(saveImagen);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String id = saveImagen.getId().toString();
+        log.info("saveImagen.getId().toString():"+id);
+        return Optional.ofNullable(saveImagen)
+            .map(result -> new ResponseEntity<>(
+                result,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }

@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.Optional;
 public class ArticleResource {
 
     private final Logger log = LoggerFactory.getLogger(ArticleResource.class);
-        
+
     @Inject
     private ArticleService articleService;
 
@@ -46,7 +47,14 @@ public class ArticleResource {
         if (article.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("article", "idexists", "A new article cannot already have an ID")).body(null);
         }
-        Article result = articleService.save(article);
+        Article result = null;
+        try {
+            result = articleService.save(article);
+        } catch (IOException e) {
+            log.error("error",e);
+        }
+
+
         return ResponseEntity.created(new URI("/api/articles/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("article", result.getId().toString()))
             .body(result);
@@ -70,7 +78,12 @@ public class ArticleResource {
         if (article.getId() == null) {
             return createArticle(article);
         }
-        Article result = articleService.save(article);
+        Article result = null;
+        try {
+            result = articleService.save(article);
+        } catch (IOException e) {
+            log.error("error",e);
+        }
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("article", article.getId().toString()))
             .body(result);
@@ -88,6 +101,24 @@ public class ArticleResource {
     public List<Article> getAllArticles() {
         log.debug("REST request to get all Articles");
         return articleService.findAll();
+    }
+    @RequestMapping(value = "/articles/ofhash",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Article> findByPreferencesHash() {
+        log.debug("REST request to get all Articles");
+        List<Article> articles  = articleService.findByPreferencesHash();
+        return articles;
+    }
+    @RequestMapping(value = "/articles/ofuser",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Article> findByUserIsCurrentUser() {
+        log.debug("REST request to get all Articles");
+        List<Article> articles  = articleService.findByUserIsCurrentUser();
+        return articles;
     }
 
     /**

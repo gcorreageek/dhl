@@ -9,8 +9,11 @@
     function Article ($resource, DateUtils) {
         var resourceUrl =  'api/articles/:id';
 
+
+
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
+            'articlesuser': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
@@ -23,5 +26,11 @@
             },
             'update': { method:'PUT' }
         });
+        // var resourceUrl =  'api/articlesuser/';
+        //
+        // return $resource(resourceUrl, {}, {
+        //     'query': { method: 'GET', isArray: true},
+        //     'articlesuser': { method: 'GET', isArray: true}
+        // });
     }
 })();

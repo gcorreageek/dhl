@@ -5,15 +5,16 @@
         .module('proyService1App')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state','Article'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController ($scope, Principal, LoginService, $state, Article) {
         var vm = this;
         console.log('test 2');
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
         vm.register = register;
+        vm.articles = Article.articlesuser({id: 'ofhash'});
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });

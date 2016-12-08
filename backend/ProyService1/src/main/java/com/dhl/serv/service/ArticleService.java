@@ -2,6 +2,7 @@ package com.dhl.serv.service;
 
 import com.dhl.serv.domain.Article;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -15,14 +16,16 @@ public interface ArticleService {
      * @param article the entity to save
      * @return the persisted entity
      */
-    Article save(Article article);
+    Article save(Article article) throws IOException;
 
     /**
      *  Get all the articles.
-     *  
+     *
      *  @return the list of entities
      */
     List<Article> findAll();
+    List<Article> findByUserIsCurrentUser();
+    List<Article> findByPreferencesHash();
 
     /**
      *  Get the "id" article.

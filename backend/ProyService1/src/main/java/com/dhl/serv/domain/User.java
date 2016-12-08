@@ -3,6 +3,7 @@ package com.dhl.serv.domain;
 import com.dhl.serv.config.Constants;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
@@ -87,6 +88,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private UserPlus userPlus;
     @Transient
     private List<UserHash> userHash;
+
     @Transient
     private UserImagen userImagen;
 

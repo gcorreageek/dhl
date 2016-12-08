@@ -26,6 +26,7 @@ public interface UserImagenService {
      */
     List<UserImagen> findAll();
     List<UserImagen> findByUserIsCurrentUser();
+    UserImagen findByUserIdAndUserImagenMain(Long idUser,Boolean main);
 
     /**
      *  Get the "id" userImagen.
